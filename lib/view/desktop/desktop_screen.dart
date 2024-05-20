@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:nexteons_study_project/utils/color_theme.dart';
+import 'package:nexteons_study_project/view/desktop/result_screen.dart';
 
+import '../../controller/controller.dart';
 import '../../utils/text_styles.dart';
 import '../widget/data_entry_feild.dart';
 import '../widget/save_button.dart';
@@ -24,6 +27,7 @@ class DesktopScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    final Controller controller = Get.put(Controller());
     return Scaffold(
       backgroundColor: Colors.white,
       body: Expanded(
@@ -163,15 +167,49 @@ class DesktopScreen extends StatelessWidget {
                                 size: size,
                                 fontsize: 20,
                                 minwidth: size.width * .12,
-                                shight: size.width*.025,
+                                shight: size.width * .025,
                                 swidth: size.width * .12,
                                 onpress: () {
                                   if (firstnamekey.currentState!.validate() &&
                                       mailKey.currentState!.validate() &&
                                       uidKey.currentState!.validate()) {
                                     //succsess
+                                    controller.addStudent(context,
+                                        fname: firstnameControl.text,
+                                        lname: lastnameControl.text,
+                                        mail: mailControl.text,
+                                        id: int.parse(uidControl.text),
+                                        dist: distControl.text,
+                                        phone: phoneControl.text,
+                                        pin: int.parse(pinControl.text),
+                                        country: countryControl.text);
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ResultScreen()));
                                   } else {
-                                    //failed
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(16)),
+                                        behavior: SnackBarBehavior.floating,
+                                        backgroundColor: Colors.red,
+                                        content: Text("Failed To Add Data",
+                                            style: GlTextStyles.interStyl(
+                                                color: ColorTheme.white,
+                                                size: 12)),
+                                        duration: const Duration(seconds: 5),
+                                        margin: EdgeInsets.only(
+                                            bottom: MediaQuery.of(context)
+                                                    .size
+                                                    .height -
+                                                100,
+                                            right: 20,
+                                            left: 20),
+                                      ),
+                                    );
                                   }
                                 },
                               ),

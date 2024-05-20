@@ -5,4 +5,5 @@ class ColorTheme {
   static Color lightBlue = const Color(0xFF49B1FC);
   static Color black = const Color(0xFF000000);
   static Color grey = const Color(0xFFF4F4F4);
+  static Color darkgrey = const Color(0xFFB0B0B0);
 }

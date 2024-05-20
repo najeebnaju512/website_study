@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:nexteons_study_project/view/desktop/desktop_screen.dart';
 import 'package:nexteons_study_project/view/mobile/mobile_screen.dart';
 import 'package:nexteons_study_project/responsive_layout.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         title: 'Nexteons Study',
         debugShowCheckedModeBanner: false,
         home: ResponsiveLayout(
