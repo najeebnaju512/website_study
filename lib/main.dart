@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nexteons_study_project/view/desktop/desktop_screen.dart';
 import 'package:nexteons_study_project/view/mobile/mobile_screen.dart';
-import 'package:nexteons_study_project/view/responsive_layout.dart';
+import 'package:nexteons_study_project/responsive_layout.dart';
 import 'package:nexteons_study_project/view/tablet/tablet_screen.dart';
 
 void main() {
