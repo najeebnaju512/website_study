@@ -61,77 +61,76 @@ class ResultScreen extends StatelessWidget {
                         style: GlTextStyles.interStyl(
                             size: 35, weight: FontWeight.w700),
                       ),
-                      Wrap(
-                        children: [
-                          Flexible(
-                            child: GridView.builder(
-                              shrinkWrap: true,
-                              gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 4,
-                                      childAspectRatio: 1.2,
-                                      mainAxisSpacing: 10,
-                                      crossAxisSpacing: 10),
-                              itemCount: controller.students.length + 1,
-                              itemBuilder: (BuildContext context, int index) {
-                                return index == controller.students.length
-                                    ? GestureDetector(
-                                        onTap: () {
-                                          //need to change here
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context)=>DesktopScreen()));
-                                        },
-                                        child: Container(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 30, vertical: 15),
-                                            decoration: BoxDecoration(
-                                                border: Border.all(
-                                                    width: 1,
-                                                    color: ColorTheme.darkgrey),
-                                                color: ColorTheme.darkgrey
-                                                    .withOpacity(.4),
-                                                borderRadius:
-                                                    BorderRadius.circular(12)),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  Icons.add_circle_outline,
-                                                  size: size.width * .07,
-                                                ),
-                                                Text(
-                                                  "Add New Student",
-                                                  style: GlTextStyles.interStyl(
-                                                      size: 16,
-                                                      weight: FontWeight.w400),
-                                                )
-                                              ],
-                                            )),
-                                      )
-                                    : StudentCard(
-                                        firstname: controller
-                                            .students[index].firstname,
-                                        lastname:
-                                            controller.students[index].lastname,
-                                        mail: controller.students[index].email,
-                                        id: controller.students[index].id,
-                                        district:
-                                            controller.students[index].district,
-                                        phone: controller
-                                            .students[index].phoneNumber,
-                                        pincode:
-                                            controller.students[index].pincode,
-                                        country:
-                                            controller.students[index].country);
-                              },
-                            ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 50),
+                        child: Flexible(
+                          child: GridView.builder(
+                            shrinkWrap: true,
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 4,
+                                    childAspectRatio: 1.2,
+                                    mainAxisSpacing: 10,
+                                    crossAxisSpacing: 10),
+                            itemCount: controller.students.length + 1,
+                            itemBuilder: (BuildContext context, int index) {
+                              return index == controller.students.length
+                                  ? GestureDetector(
+                                      onTap: () {
+                                        //need to change
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context)=>DesktopScreen()));
+                                      },
+                                      child: Container(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 30, vertical: 15),
+                                          decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  width: 1,
+                                                  color: ColorTheme.darkgrey),
+                                              color: ColorTheme.darkgrey
+                                                  .withOpacity(.4),
+                                              borderRadius:
+                                                  BorderRadius.circular(12)),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.add_circle_outline,
+                                                size: size.width * .07,
+                                              ),
+                                              Text(
+                                                "Add New Student",
+                                                style: GlTextStyles.interStyl(
+                                                    size: 16,
+                                                    weight: FontWeight.w400),
+                                              )
+                                            ],
+                                          )),
+                                    )
+                                  : StudentCard(
+                                      firstname: controller
+                                          .students[index].firstname,
+                                      lastname:
+                                          controller.students[index].lastname,
+                                      mail: controller.students[index].email,
+                                      id: controller.students[index].id,
+                                      district:
+                                          controller.students[index].district,
+                                      phone: controller
+                                          .students[index].phoneNumber,
+                                      pincode:
+                                          controller.students[index].pincode,
+                                      country:
+                                          controller.students[index].country);
+                            },
                           ),
-                        ],
+                        ),
                       ),
                     ],
                   ),

@@ -4,7 +4,7 @@ import 'package:nexteons_study_project/model/data_model.dart';
 
 class Controller extends GetxController {
   List<Student> students = [
-    Student(firstname: "Akarsh", lastname: "B R", email: "akarsh@gmail.com", id: 3, district: "Calicut", phoneNumber: "1234567456", pincode: 123123, country: "India")
+    Student(firstname: "Akarsh", lastname: "B R", email: "akarsh@gmail.com", id: 356456, district: "Calicut", phoneNumber: "1234567456", pincode: 123123, country: "India")
   ];
 
   void addStudent(BuildContext context,
