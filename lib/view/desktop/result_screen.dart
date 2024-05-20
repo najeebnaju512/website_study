@@ -70,7 +70,6 @@ class ResultScreen extends StatelessWidget {
                                   const SliverGridDelegateWithFixedCrossAxisCount(
                                       crossAxisCount: 4,
                                       childAspectRatio: 1.2,
-                                      // mainAxisExtent: 120,
                                       mainAxisSpacing: 10,
                                       crossAxisSpacing: 10),
                               itemCount: controller.students.length + 1,
@@ -78,6 +77,7 @@ class ResultScreen extends StatelessWidget {
                                 return index == controller.students.length
                                     ? GestureDetector(
                                         onTap: () {
+                                          //need to change here
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
