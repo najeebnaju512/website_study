@@ -163,7 +163,7 @@ class TabletScreen extends StatelessWidget {
                                       )),
                                   SaveButton(
                                     size: size,
-                                    fontsize: 18,
+                                    fontsize: 14,
                                     minwidth: size.width * .12,
                                     shight: size.width * .045,
                                     swidth: size.width * .15,
