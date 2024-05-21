@@ -7,22 +7,6 @@ import '../../utils/color_theme.dart';
 import '../../utils/text_styles.dart';
 import '../widget/student_card.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const GetMaterialApp(
-        title: 'Nexteons Study',
-        debugShowCheckedModeBanner: false,
-        home: ResultScreen());
-  }
-}
-
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key});
 

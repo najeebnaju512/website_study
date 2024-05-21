@@ -55,7 +55,7 @@ class StudentCard extends StatelessWidget {
             style: GlTextStyles.interStyl(size: 16, weight: FontWeight.w400),
           ),
           Text(
-            "$phone",
+            phone,
             style: GlTextStyles.interStyl(size: 16, weight: FontWeight.w400),
           ),
           Text(

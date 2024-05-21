@@ -28,37 +28,34 @@ class DataEntryField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: Form(
-        key: formKey,
-        child: Flexible(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: GlTextStyles.interStyl(size: fontsize),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              TextFormField(
-                validator: validator,
-                controller: controller,
-                keyboardType: keyboardType,
-                maxLength: maxlength,
-                inputFormatters: inputFormatters,
-                decoration: InputDecoration(
-                  fillColor: ColorTheme.grey,
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
+      child: Flexible(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: GlTextStyles.interStyl(size: fontsize),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            TextFormField(
+              validator: validator,
+              controller: controller,
+              keyboardType: keyboardType,
+              maxLength: maxlength,
+              inputFormatters: inputFormatters,
+              decoration: InputDecoration(
+                fillColor: ColorTheme.grey,
+                filled: true,
+                border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
