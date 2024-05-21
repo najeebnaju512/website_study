@@ -45,6 +45,7 @@ class CreateStudentController extends GetxController {
 
       //need to change here
       Get.to(const StudentList());
+      resetAll();
     } else {
       ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(
         SnackBar(

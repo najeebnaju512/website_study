@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 
 import '../../../../utils/color_theme.dart';
 import '../controller.dart';
@@ -15,8 +14,6 @@ class CreateStudentDesktopScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    final CreateStudentController controller =
-        Get.put(CreateStudentController());
     return Scaffold(
       backgroundColor: Colors.white,
       body: Form(
