@@ -106,8 +106,8 @@ class TabletResultScreen extends StatelessWidget {
                                         phone: students[index].phoneNumber,
                                         pincode: students[index].pincode,
                                         country: students[index].country,
-                                        titleFontSize: size.width * .011,
-                                        subFontsize: size.width * .01,
+                                        titleFontSize: size.width * .013,
+                                        subFontsize: size.width * .012,
                                       );
                               },
                             ),
