@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nexteons_study_project/view/desktop/desktop_screen.dart';
-import 'package:nexteons_study_project/view/mobile/mobile_screen.dart';
-import 'package:nexteons_study_project/responsive_layout.dart';
-import 'package:nexteons_study_project/view/tablet/tablet_screen.dart';
+import 'package:nexteons_study_project/utils/constant/app_const.dart';
 
+import 'model/data_model.dart';
+import 'screen/students/create/view.dart';
+  RxList<Student> students = [
+    Student(
+        firstname: "Akarsh",
+        lastname: "B R",
+        email: "akarsh@gmail.com",
+        id: 356456,
+        district: "Calicut",
+        phoneNumber: "1234567456",
+        pincode: 123123,
+        country: "India")
+  ].obs;
 void main() {
   runApp(const MyApp());
 }
@@ -16,11 +26,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         title: 'Nexteons Study',
+        navigatorKey: navigatorKey,
         debugShowCheckedModeBanner: false,
-        home: ResponsiveLayout(
-            mobileBody: MobileScreen(),
-            tabletBody: TabletScreen(),
-            desktopBody: DesktopScreen())
-            );
+        home: const StudentsCreate());
   }
 }

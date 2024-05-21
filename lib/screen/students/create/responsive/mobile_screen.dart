@@ -2,22 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nexteons_study_project/utils/color_theme.dart';
 
-import '../../utils/text_styles.dart';
-import '../widget/data_entry_feild.dart';
-import '../widget/save_button.dart';
+import '../../../../utils/text_styles.dart';
+import 'widget/data_entry_feild.dart';
+import 'widget/save_button.dart';
+import '../controller.dart';
 
-class MobileScreen extends StatelessWidget {
-  MobileScreen({super.key});
-
-  final firstnameControl = TextEditingController();
-  final mailControl = TextEditingController();
-  final lastnameControl = TextEditingController();
-  final uidControl = TextEditingController();
-  final distControl = TextEditingController();
-  final pinControl = TextEditingController();
-  final phoneControl = TextEditingController();
-  final countryControl = TextEditingController();
-  final formkey = GlobalKey<FormState>();
+class CreateStudentMobileScreen extends StatelessWidget {
+  final CreateStudentController controller;
+  const CreateStudentMobileScreen({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +26,7 @@ class MobileScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(right: 20, left: 20, top: 15),
         child: Form(
-          key: formkey,
+          key: controller.formkey,
           child: Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -49,7 +41,7 @@ class MobileScreen extends StatelessWidget {
                 DataEntryField(
                   title: "First Name",
                   fontsize: 12,
-                  controller: firstnameControl,
+                  controller: controller.firstnameControl,
                   validator: (value) {
                     if (value == null || value.isEmpty || value.length < 3) {
                       return 'First name Should atleast Contains 3 Letters ';
@@ -60,12 +52,12 @@ class MobileScreen extends StatelessWidget {
                 DataEntryField(
                     title: "Last Name",
                     fontsize: 12,
-                    controller: lastnameControl),
+                    controller: controller.lastnameControl),
                 //if entered it has to be validated
                 DataEntryField(
                   title: "Email Address",
                   fontsize: 12,
-                  controller: mailControl,
+                  controller: controller.mailControl,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return null;
@@ -80,7 +72,7 @@ class MobileScreen extends StatelessWidget {
                 DataEntryField(
                   title: "User ID",
                   fontsize: 12,
-                  controller: uidControl,
+                  controller: controller.uidControl,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Enter User Id";
@@ -89,23 +81,27 @@ class MobileScreen extends StatelessWidget {
                   },
                 ),
                 DataEntryField(
-                    title: "District", fontsize: 12, controller: distControl),
+                    title: "District",
+                    fontsize: 12,
+                    controller: controller.distControl),
                 DataEntryField(
                   title: "Phone No.",
                   fontsize: 12,
-                  controller: phoneControl,
+                  controller: controller.phoneControl,
                   keyboardType: TextInputType.phone,
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 ),
                 DataEntryField(
                   title: "Pincode",
                   fontsize: 12,
-                  controller: pinControl,
+                  controller: controller.pinControl,
                   keyboardType: TextInputType.number,
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 ),
                 DataEntryField(
-                    title: "Country", fontsize: 12, controller: countryControl),
+                    title: "Country",
+                    fontsize: 12,
+                    controller: controller.countryControl),
                 const Spacer(),
                 Center(
                   child: SaveButton(
@@ -114,28 +110,13 @@ class MobileScreen extends StatelessWidget {
                     shight: 40,
                     swidth: size.width * .3,
                     minwidth: size.width * .3,
-                    onpress: () {
-                      if (formkey.currentState!.validate()) {
-                        //succsess
-                      } else {
-                        //failed
-                      }
-                    },
+                    onpress: controller.createStudent,
                   ),
                 ),
                 SizedBox(height: size.width * .02),
                 Center(
                   child: TextButton(
-                      onPressed: () {
-                        firstnameControl.clear();
-                        mailControl.clear();
-                        lastnameControl.clear();
-                        uidControl.clear();
-                        distControl.clear();
-                        pinControl.clear();
-                        phoneControl.clear();
-                        countryControl.clear();
-                      },
+                      onPressed: controller.resetAll,
                       child: Text(
                         "Reset All",
                         style: GlTextStyles.interStyl(

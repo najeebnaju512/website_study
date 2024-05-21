@@ -1,23 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../utils/color_theme.dart';
-import '../../utils/text_styles.dart';
-import '../widget/data_entry_feild.dart';
-import '../widget/save_button.dart';
+import '../../../../utils/color_theme.dart';
+import '../../../../utils/text_styles.dart';
+import 'widget/data_entry_feild.dart';
+import 'widget/save_button.dart';
+import '../controller.dart';
 
-class TabletScreen extends StatelessWidget {
-  TabletScreen({super.key});
-
-  final firstnameControl = TextEditingController();
-  final mailControl = TextEditingController();
-  final lastnameControl = TextEditingController();
-  final uidControl = TextEditingController();
-  final distControl = TextEditingController();
-  final pinControl = TextEditingController();
-  final phoneControl = TextEditingController();
-  final countryControl = TextEditingController();
-  final formkey = GlobalKey<FormState>();
+class CreateStudentTabletScreen extends StatelessWidget {
+  final CreateStudentController controller;
+  const CreateStudentTabletScreen({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +17,7 @@ class TabletScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Form(
-        key: formkey,
+        key: controller.formkey,
         child: Expanded(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -71,7 +63,7 @@ class TabletScreen extends StatelessWidget {
                                 //validate min 3 lettoers needed
                                 DataEntryField(
                                   title: "First Name",
-                                  controller: firstnameControl,
+                                  controller: controller.firstnameControl,
                                   validator: (value) {
                                     if (value == null ||
                                         value.isEmpty ||
@@ -83,11 +75,11 @@ class TabletScreen extends StatelessWidget {
                                 ),
                                 DataEntryField(
                                     title: "Last Name",
-                                    controller: lastnameControl),
+                                    controller: controller.lastnameControl),
                                 //if entered it has to be validated
                                 DataEntryField(
                                   title: "Email Address",
-                                  controller: mailControl,
+                                  controller: controller.mailControl,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
                                       return null;
@@ -101,7 +93,7 @@ class TabletScreen extends StatelessWidget {
                                 //is required
                                 DataEntryField(
                                   title: "User ID",
-                                  controller: uidControl,
+                                  controller: controller.uidControl,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
                                       return "Enter User Id";
@@ -110,10 +102,11 @@ class TabletScreen extends StatelessWidget {
                                   },
                                 ),
                                 DataEntryField(
-                                    title: "District", controller: distControl),
+                                    title: "District",
+                                    controller: controller.distControl),
                                 DataEntryField(
                                   title: "Phone No.",
-                                  controller: phoneControl,
+                                  controller: controller.phoneControl,
                                   keyboardType: TextInputType.phone,
                                   inputFormatters: [
                                     FilteringTextInputFormatter.digitsOnly
@@ -121,7 +114,7 @@ class TabletScreen extends StatelessWidget {
                                 ),
                                 DataEntryField(
                                   title: "Pincode",
-                                  controller: pinControl,
+                                  controller: controller.pinControl,
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
                                     FilteringTextInputFormatter.digitsOnly
@@ -129,7 +122,7 @@ class TabletScreen extends StatelessWidget {
                                 ),
                                 DataEntryField(
                                     title: "Country",
-                                    controller: countryControl),
+                                    controller: controller.countryControl),
                               ],
                             ),
                           ),
@@ -144,16 +137,7 @@ class TabletScreen extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     TextButton(
-                                        onPressed: () {
-                                          firstnameControl.clear();
-                                          mailControl.clear();
-                                          lastnameControl.clear();
-                                          uidControl.clear();
-                                          distControl.clear();
-                                          pinControl.clear();
-                                          phoneControl.clear();
-                                          countryControl.clear();
-                                        },
+                                        onPressed: controller.resetAll,
                                         child: Text(
                                           "Reset All",
                                           style: GlTextStyles.interStyl(
@@ -166,13 +150,7 @@ class TabletScreen extends StatelessWidget {
                                       minwidth: size.width * .12,
                                       shight: size.width * .045,
                                       swidth: size.width * .15,
-                                      onpress: () {
-                                        if (formkey.currentState!.validate()) {
-                                          //succsess
-                                        } else {
-                                          //failed
-                                        }
-                                      },
+                                      onpress: controller.createStudent,
                                     ),
                                   ]),
                             ),

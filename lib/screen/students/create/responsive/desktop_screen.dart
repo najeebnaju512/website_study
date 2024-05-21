@@ -1,37 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:nexteons_study_project/utils/color_theme.dart';
-import 'package:nexteons_study_project/view/desktop/result_screen.dart';
 
-import '../../controller/controller.dart';
-import '../../utils/text_styles.dart';
-import '../widget/data_entry_feild.dart';
-import '../widget/save_button.dart';
+import '../../../../utils/color_theme.dart';
+import '../controller.dart';
+import '../../../../utils/text_styles.dart';
+import 'widget/data_entry_feild.dart';
+import 'widget/save_button.dart';
 
-class DesktopScreen extends StatelessWidget {
-  DesktopScreen({super.key});
-
-  final firstnameControl = TextEditingController();
-  final mailControl = TextEditingController();
-  final lastnameControl = TextEditingController();
-  final uidControl = TextEditingController();
-  final distControl = TextEditingController();
-  final pinControl = TextEditingController();
-  final phoneControl = TextEditingController();
-  final countryControl = TextEditingController();
-  final formkey = GlobalKey<FormState>();
-  final mailKey = GlobalKey<FormState>();
-  final uidKey = GlobalKey<FormState>();
+class CreateStudentDesktopScreen extends StatelessWidget {
+  final CreateStudentController controller;
+  const CreateStudentDesktopScreen({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    final Controller controller = Get.put(Controller());
+    final CreateStudentController controller =
+        Get.put(CreateStudentController());
     return Scaffold(
       backgroundColor: Colors.white,
       body: Form(
-        key: formkey,
+        key: controller.formkey,
         child: Expanded(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -77,7 +66,7 @@ class DesktopScreen extends StatelessWidget {
                                 //validate min 3 lettoers needed
                                 DataEntryField(
                                   title: "First Name",
-                                  controller: firstnameControl,
+                                  controller: controller.firstnameControl,
                                   validator: (value) {
                                     if (value == null ||
                                         value.isEmpty ||
@@ -89,11 +78,11 @@ class DesktopScreen extends StatelessWidget {
                                 ),
                                 DataEntryField(
                                     title: "Last Name",
-                                    controller: lastnameControl),
+                                    controller: controller.lastnameControl),
                                 //if entered it has to be validated
                                 DataEntryField(
                                   title: "Email Address",
-                                  controller: mailControl,
+                                  controller: controller.mailControl,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
                                       return null;
@@ -107,7 +96,7 @@ class DesktopScreen extends StatelessWidget {
                                 //is required
                                 DataEntryField(
                                   title: "User ID",
-                                  controller: uidControl,
+                                  controller: controller.uidControl,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
                                       return "Enter User Id";
@@ -116,10 +105,11 @@ class DesktopScreen extends StatelessWidget {
                                   },
                                 ),
                                 DataEntryField(
-                                    title: "District", controller: distControl),
+                                    title: "District",
+                                    controller: controller.distControl),
                                 DataEntryField(
                                   title: "Phone No.",
-                                  controller: phoneControl,
+                                  controller: controller.phoneControl,
                                   keyboardType: TextInputType.phone,
                                   inputFormatters: [
                                     FilteringTextInputFormatter.digitsOnly
@@ -127,14 +117,15 @@ class DesktopScreen extends StatelessWidget {
                                 ),
                                 DataEntryField(
                                   title: "Pincode",
-                                  controller: pinControl,
+                                  controller: controller.pinControl,
                                   keyboardType: TextInputType.number,
                                   inputFormatters: [
                                     FilteringTextInputFormatter.digitsOnly
                                   ],
                                 ),
                                 DataEntryField(
-                                    title: "Country", controller: countryControl),
+                                    title: "Country",
+                                    controller: controller.countryControl),
                               ],
                             ),
                           ),
@@ -147,16 +138,7 @@ class DesktopScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 TextButton(
-                                    onPressed: () {
-                                      firstnameControl.clear();
-                                      mailControl.clear();
-                                      lastnameControl.clear();
-                                      uidControl.clear();
-                                      distControl.clear();
-                                      pinControl.clear();
-                                      phoneControl.clear();
-                                      countryControl.clear();
-                                    },
+                                    onPressed: controller.resetAll,
                                     child: Text(
                                       "Reset All",
                                       style: GlTextStyles.interStyl(
@@ -168,49 +150,7 @@ class DesktopScreen extends StatelessWidget {
                                   minwidth: size.width * .12,
                                   shight: size.width * .025,
                                   swidth: size.width * .12,
-                                  onpress: () {
-                                    if (formkey.currentState!.validate()) {
-                                      //succsess
-                                      controller.addStudent(context,
-                                          fname: firstnameControl.text,
-                                          lname: lastnameControl.text,
-                                          mail: mailControl.text,
-                                          id: int.parse(uidControl.text),
-                                          dist: distControl.text,
-                                          phone: phoneControl.text,
-                                          pin: int.parse(pinControl.text),
-                                          country: countryControl.text);
-        
-                                          //need to change here
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  ResultScreen()));
-                                    } else {
-                                      ScaffoldMessenger.of(context).showSnackBar(
-                                        SnackBar(
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(16)),
-                                          behavior: SnackBarBehavior.floating,
-                                          backgroundColor: Colors.red,
-                                          content: Text("Failed To Add Data",
-                                              style: GlTextStyles.interStyl(
-                                                  color: ColorTheme.white,
-                                                  size: 12)),
-                                          duration: const Duration(seconds: 5),
-                                          margin: EdgeInsets.only(
-                                              bottom: MediaQuery.of(context)
-                                                      .size
-                                                      .height -
-                                                  100,
-                                              right: 20,
-                                              left: 20),
-                                        ),
-                                      );
-                                    }
-                                  },
+                                  onpress: controller.createStudent,
                                 ),
                               ],
                             ),
