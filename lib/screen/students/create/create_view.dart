@@ -6,6 +6,8 @@ import 'package:nexteons_study_project/screen/students/create/responsive/desktop
 import 'package:nexteons_study_project/screen/students/create/responsive/mobile_screen.dart';
 import 'package:nexteons_study_project/screen/students/create/responsive/tablet_screen.dart';
 
+import '../widget/place_holder.dart';
+
 class StudentsCreate extends StatefulWidget {
   const StudentsCreate({super.key});
 
@@ -30,12 +32,12 @@ class _StudentsCreateState extends State<StudentsCreate> {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveLayout(
-        mobileBody: CreateStudentMobileScreen(
-          controller: controller,
-        ),
-        tabletBody: CreateStudentTabletScreen(controller: controller,),
-        desktopBody: CreateStudentDesktopScreen(controller: controller,));
+    return PlaceHolder(
+      child: ResponsiveLayout(
+          mobileBody: CreateStudentMobileScreen(controller: controller),
+          tabletBody: CreateStudentTabletScreen(controller: controller),
+          desktopBody: CreateStudentDesktopScreen(controller: controller)),
+    );
   }
 }
 //st->child
@@ -58,3 +60,13 @@ class _StudentsCreateState extends State<StudentsCreate> {
 /// app:if(mobile)appbar:null
 /// 
 /// }
+
+
+/*
+ ResponsiveLayout(
+        mobileBody: CreateStudentMobileScreen(
+          controller: controller,
+        ),
+        tabletBody: CreateStudentTabletScreen(controller: controller,),
+        desktopBody: CreateStudentDesktopScreen(controller: controller,));
+*/ 

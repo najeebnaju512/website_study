@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../../utils/color_theme.dart';
 import '../controller.dart';
 import '../../../../utils/text_styles.dart';
 import 'widget/data_entry_feild.dart';
@@ -16,150 +15,134 @@ class CreateStudentDesktopScreen extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Form(
-        key: controller.formkey,
-        child: Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                height: double.infinity,
-                width: size.width * .2,
-                color: ColorTheme.lightBlue,
-                padding: const EdgeInsets.only(top: 74, right: 54, left: 54),
-                child: Align(
-                    alignment: Alignment.topCenter,
-                    child: Image.asset(
-                      "asset/logo/logo.png",
-                    )),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 120, top: 72),
-                child: SizedBox(
-                  height: size.height,
-                  width: size.width * .65,
-                  child: Flexible(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "BASIC DETAILS",
-                          style: GlTextStyles.interStyl(
-                              size: 35, weight: FontWeight.w700),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 50),
-                          child: Flexible(
-                            child: GridView(
-                              shrinkWrap: true,
-                              gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 2,
-                                      childAspectRatio: 16,
-                                      mainAxisExtent: 120,
-                                      mainAxisSpacing: 20,
-                                      crossAxisSpacing: 80),
-                              children: [
-                                //validate min 3 lettoers needed
-                                DataEntryField(
-                                  title: "First Name",
-                                  controller: controller.firstnameControl,
-                                  validator: (value) {
-                                    if (value == null ||
-                                        value.isEmpty ||
-                                        value.length < 3) {
-                                      return 'First name Should atleast Contains 3 Letters ';
-                                    }
-                                    return null;
-                                  },
-                                ),
-                                DataEntryField(
-                                    title: "Last Name",
-                                    controller: controller.lastnameControl),
-                                //if entered it has to be validated
-                                DataEntryField(
-                                  title: "Email Address",
-                                  controller: controller.mailControl,
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return null;
-                                    } else if (!value.contains('@') ||
-                                        !value.contains('.com')) {
-                                      return 'Enter a valid Email';
-                                    }
-                                    return null;
-                                  },
-                                ),
-                                //is required
-                                DataEntryField(
-                                  title: "User ID",
-                                  controller: controller.uidControl,
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return "Enter User Id";
-                                    }
-                                    return null;
-                                  },
-                                ),
-                                DataEntryField(
-                                    title: "District",
-                                    controller: controller.distControl),
-                                DataEntryField(
-                                  title: "Phone No.",
-                                  controller: controller.phoneControl,
-                                  keyboardType: TextInputType.phone,
-                                  inputFormatters: [
-                                    FilteringTextInputFormatter.digitsOnly
-                                  ],
-                                ),
-                                DataEntryField(
-                                  title: "Pincode",
-                                  controller: controller.pinControl,
-                                  keyboardType: TextInputType.number,
-                                  inputFormatters: [
-                                    FilteringTextInputFormatter.digitsOnly
-                                  ],
-                                ),
-                                DataEntryField(
-                                    title: "Country",
-                                    controller: controller.countryControl),
-                              ],
-                            ),
-                          ),
-                        ),
-                        const Spacer(),
-                        SizedBox(
-                          width: size.width * .65,
-                          child: Expanded(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                TextButton(
-                                    onPressed: controller.resetAll,
-                                    child: Text(
-                                      "Reset All",
-                                      style: GlTextStyles.interStyl(
-                                          size: 24, weight: FontWeight.w600),
-                                    )),
-                                SaveButton(
-                                  size: size,
-                                  fontsize: 20,
-                                  minwidth: size.width * .12,
-                                  shight: size.width * .025,
-                                  swidth: size.width * .12,
-                                  onpress: controller.createStudent,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        const Spacer()
-                      ],
+      body: SingleChildScrollView(
+        child: Form(
+          key: controller.formkey,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 120, top: 72),
+            child: SizedBox(
+              height: size.height,
+              width: size.width * .65,
+              child: Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "BASIC DETAILS",
+                      style: GlTextStyles.interStyl(
+                          size: 35, weight: FontWeight.w700),
                     ),
-                  ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 50),
+                      child: Flexible(
+                        child: GridView(
+                          shrinkWrap: true,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2,
+                                  childAspectRatio: 16,
+                                  mainAxisExtent: 120,
+                                  mainAxisSpacing: 20,
+                                  crossAxisSpacing: 80),
+                          children: [
+                            //validate min 3 lettoers needed
+                            DataEntryField(
+                              title: "First Name",
+                              controller: controller.firstnameControl,
+                              validator: (value) {
+                                if (value == null ||
+                                    value.isEmpty ||
+                                    value.length < 3) {
+                                  return 'First name Should atleast Contains 3 Letters ';
+                                }
+                                return null;
+                              },
+                            ),
+                            DataEntryField(
+                                title: "Last Name",
+                                controller: controller.lastnameControl),
+                            //if entered it has to be validated
+                            DataEntryField(
+                              title: "Email Address",
+                              controller: controller.mailControl,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return null;
+                                } else if (!value.contains('@') ||
+                                    !value.contains('.com')) {
+                                  return 'Enter a valid Email';
+                                }
+                                return null;
+                              },
+                            ),
+                            //is required
+                            DataEntryField(
+                              title: "User ID",
+                              controller: controller.uidControl,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return "Enter User Id";
+                                }
+                                return null;
+                              },
+                            ),
+                            DataEntryField(
+                                title: "District",
+                                controller: controller.distControl),
+                            DataEntryField(
+                              title: "Phone No.",
+                              controller: controller.phoneControl,
+                              keyboardType: TextInputType.phone,
+                              inputFormatters: [
+                                FilteringTextInputFormatter.digitsOnly
+                              ],
+                            ),
+                            DataEntryField(
+                              title: "Pincode",
+                              controller: controller.pinControl,
+                              keyboardType: TextInputType.number,
+                              inputFormatters: [
+                                FilteringTextInputFormatter.digitsOnly
+                              ],
+                            ),
+                            DataEntryField(
+                                title: "Country",
+                                controller: controller.countryControl),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const Spacer(),
+                    SizedBox(
+                      width: size.width * .65,
+                      child: Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            TextButton(
+                                onPressed: controller.resetAll,
+                                child: Text(
+                                  "Reset All",
+                                  style: GlTextStyles.interStyl(
+                                      size: 24, weight: FontWeight.w600),
+                                )),
+                            SaveButton(
+                              size: size,
+                              fontsize: 20,
+                              minwidth: size.width * .12,
+                              shight: size.width * .025,
+                              swidth: size.width * .12,
+                              onpress: controller.createStudent,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const Spacer()
+                  ],
                 ),
-              )
-            ],
+              ),
+            ),
           ),
         ),
       ),

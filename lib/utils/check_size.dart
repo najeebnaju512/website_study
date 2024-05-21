@@ -1,7 +1,7 @@
-bool fnCheckMobile(double size) {
-  return (size < 600);
+bool fnCheckMobile(double width) {
+  return (width < 650);
 }
 
-bool fnCheckTablet(double size) {
-  return (size < 1200);
+bool fnCheckTablet(double width) {
+  return (width < 1200);
 }

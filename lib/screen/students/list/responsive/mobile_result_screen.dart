@@ -11,16 +11,7 @@ class MobileResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: Image.asset(
-          "asset/logo/logo.png",
-          width: size.width * .3,
-          height: size.width * .1,
-        ),
-        backgroundColor: ColorTheme.lightBlue,
-      ),
       body: Padding(
           padding: const EdgeInsets.only(right: 20, left: 20, top: 15),
           child: ListView.builder(

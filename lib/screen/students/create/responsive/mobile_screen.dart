@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nexteons_study_project/utils/color_theme.dart';
 
 import '../../../../utils/text_styles.dart';
 import 'widget/data_entry_feild.dart';
@@ -15,14 +14,6 @@ class CreateStudentMobileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: Image.asset(
-          "asset/logo/logo.png",
-          width: size.width * .3,
-          height: size.width * .1,
-        ),
-        backgroundColor: ColorTheme.lightBlue,
-      ),
       body: Padding(
         padding: const EdgeInsets.only(right: 20, left: 20, top: 15),
         child: Form(
