@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_study_project/responsive_layout.dart';
+import 'package:nexteons_study_project/utils/responsive_layout.dart';
 import 'package:nexteons_study_project/screen/students/list/responsive/desktop_result_screen.dart';
 import 'package:nexteons_study_project/screen/students/list/responsive/tablet_result_screen.dart';
 import 'package:nexteons_study_project/screen/students/list/responsive/mobile_result_screen.dart';
