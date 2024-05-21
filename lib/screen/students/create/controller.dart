@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nexteons_study_project/main.dart';
 import 'package:nexteons_study_project/model/data_model.dart';
-import 'package:nexteons_study_project/screen/students/list/list_view.dart';
 import 'package:nexteons_study_project/utils/constant/app_const.dart';
 
 import '../../../utils/color_theme.dart';
@@ -44,7 +43,7 @@ class CreateStudentController extends GetxController {
           country: countryControl.text));
 
       //navigation
-      Get.to(const StudentList());
+      Get.toNamed('/result');
       resetAll();
     } else {
       ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nexteons_study_project/screen/students/create/create_view.dart';
 import 'package:nexteons_study_project/utils/color_theme.dart';
 import 'package:nexteons_study_project/utils/text_styles.dart';
 
@@ -34,7 +33,7 @@ class MobileResultScreen extends StatelessWidget {
                     color: ColorTheme.darkgrey.withOpacity(.8),
                     child: GestureDetector(
                       onTap: () {
-                        Get.to(const StudentsCreate());
+                        Get.toNamed('/create');
                       },
                       child: ListTile(
                         leading: const Icon(

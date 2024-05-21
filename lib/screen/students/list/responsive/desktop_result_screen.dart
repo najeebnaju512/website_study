@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../main.dart';
-import '../../create/create_view.dart';
 import '../../../../utils/color_theme.dart';
 import '../../../../utils/text_styles.dart';
 import 'widget/student_card.dart';
@@ -64,7 +63,7 @@ class DesktopResultScreen extends StatelessWidget {
                                     ? GestureDetector(
                                         onTap: () {
                                           //need to change
-                                          Get.to(const StudentsCreate());
+                                          Get.toNamed('/create');
                                         },
                                         child: Card(
                                           elevation: 0,

@@ -4,15 +4,14 @@ import 'package:nexteons_study_project/screen/students/list/responsive/desktop_r
 import 'package:nexteons_study_project/screen/students/list/responsive/tablet_result_screen.dart';
 import 'package:nexteons_study_project/screen/students/list/responsive/mobile_result_screen.dart';
 
-class StudentList extends StatefulWidget {
-  const StudentList({super.key});
+class StudentResultList extends StatefulWidget {
+  const StudentResultList({super.key});
 
   @override
-  State<StudentList> createState() => _StudentListState();
+  State<StudentResultList> createState() => _StudentResultListState();
 }
 
-class _StudentListState extends State<StudentList> {
-  
+class _StudentResultListState extends State<StudentResultList> {
   @override
   Widget build(BuildContext context) {
     return const ResponsiveLayout(
