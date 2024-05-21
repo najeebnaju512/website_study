@@ -7,8 +7,8 @@ import '../../../../utils/color_theme.dart';
 import '../../../../utils/text_styles.dart';
 import 'widget/student_card.dart';
 
-class DesktopResultScreen extends StatelessWidget {
-  const DesktopResultScreen({super.key});
+class TabletResultScreen extends StatelessWidget {
+  const TabletResultScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class DesktopResultScreen extends StatelessWidget {
               height: double.infinity,
               width: size.width * .2,
               color: ColorTheme.lightBlue,
-              padding: const EdgeInsets.only(top: 74, right: 54, left: 54),
+              padding: const EdgeInsets.only(top: 63, right: 35, left: 35),
               child: Align(
                   alignment: Alignment.topCenter,
                   child: Image.asset(
@@ -31,10 +31,10 @@ class DesktopResultScreen extends StatelessWidget {
                   )),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 120, top: 72),
+              padding: const EdgeInsets.only(left: 120, top: 63),
               child: SizedBox(
                 height: size.height,
-                width: size.width * .65,
+                width: size.width * .5,
                 child: Flexible(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,11 +52,11 @@ class DesktopResultScreen extends StatelessWidget {
                               shrinkWrap: true,
                               gridDelegate:
                                   SliverGridDelegateWithMaxCrossAxisExtent(
-                                childAspectRatio: .05,
-                                mainAxisExtent: size.width * .14,
-                                mainAxisSpacing: 10,
-                                crossAxisSpacing: 10,
-                                maxCrossAxisExtent: size.width * .13,
+                                childAspectRatio: .1,
+                                mainAxisExtent: size.width * .2,
+                                mainAxisSpacing: 15,
+                                crossAxisSpacing: 15,
+                                maxCrossAxisExtent: size.width * .2,
                               ),
                               itemCount: students.length + 1,
                               itemBuilder: (BuildContext context, int index) {
@@ -91,7 +91,7 @@ class DesktopResultScreen extends StatelessWidget {
                                                 style: GlTextStyles.interStyl(
                                                     color: ColorTheme.black
                                                         .withOpacity(.6),
-                                                    size: size.width * .01,
+                                                    size: size.width * .0,
                                                     weight: FontWeight.w400),
                                               )
                                             ],
@@ -107,7 +107,7 @@ class DesktopResultScreen extends StatelessWidget {
                                         phone: students[index].phoneNumber,
                                         pincode: students[index].pincode,
                                         country: students[index].country,
-                                        titleFontSize: size.width * .013,
+                                        titleFontSize: size.width * .011,
                                         subFontsize: size.width * .01,
                                       );
                               },

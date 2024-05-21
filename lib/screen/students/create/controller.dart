@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nexteons_study_project/main.dart';
 import 'package:nexteons_study_project/model/data_model.dart';
+import 'package:nexteons_study_project/screen/students/list/list_view.dart';
 import 'package:nexteons_study_project/utils/constant/app_const.dart';
 
 import '../../../utils/color_theme.dart';
 import '../../../utils/text_styles.dart';
-import '../list/responsive/desktop_result_screen.dart';
 
 class CreateStudentController extends GetxController {
   final firstnameControl = TextEditingController();
@@ -44,7 +44,7 @@ class CreateStudentController extends GetxController {
           country: countryControl.text));
 
       //need to change here
-      Get.to(const ResultScreen());
+      Get.to(const StudentList());
     } else {
       ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(
         SnackBar(

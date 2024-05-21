@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:nexteons_study_project/utils/constant/app_const.dart';
 
 import 'model/data_model.dart';
-import 'screen/students/create/view.dart';
+import 'screen/students/create/create_view.dart';
   RxList<Student> students = [
     Student(
         firstname: "Akarsh",
