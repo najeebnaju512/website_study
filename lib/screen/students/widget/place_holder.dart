@@ -15,7 +15,7 @@ class PlaceHolder extends StatelessWidget {
       builder: (context, constraints) {
         var size = MediaQuery.of(context).size;
         return Scaffold(
-            appBar: fnCheckMobile(size.width) ? MobileAppBar(size: size) : null,
+            appBar: fnCheckMobile(size.width) ? const MobileAppBar() : null,
             body: Row(
               children: [
                 if (fnCheckTablet(size.width) && !fnCheckMobile(size.width))

@@ -5,10 +5,7 @@ import '../../../utils/color_theme.dart';
 class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MobileAppBar({
     super.key,
-    required this.size,
   });
-
-  final Size size;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
