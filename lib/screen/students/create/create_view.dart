@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nexteons_study_project/utils/responsive_layout.dart';
+import 'package:nexteons_study_project/screen/students/widget/responsive_layout.dart';
 import 'package:nexteons_study_project/screen/students/create/controller.dart';
 import 'package:nexteons_study_project/screen/students/create/responsive/desktop_screen.dart';
 import 'package:nexteons_study_project/screen/students/create/responsive/mobile_screen.dart';
@@ -38,3 +38,23 @@ class _StudentsCreateState extends State<StudentsCreate> {
         desktopBody: CreateStudentDesktopScreen(controller: controller,));
   }
 }
+//st->child
+///mobile:Sc{
+/// appbar: app
+/// body :child
+///}
+///tab:sc{
+///
+///}
+/// scffold{
+/// body:Row(
+/// [
+/// if(desktop)
+/// desktop,
+/// if(mtab)
+/// tabside
+/// Expanded(child)
+/// ]),
+/// app:if(mobile)appbar:null
+/// 
+/// }

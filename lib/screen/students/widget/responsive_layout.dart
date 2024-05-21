@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nexteons_study_project/utils/check_size.dart';
 
 class ResponsiveLayout extends StatelessWidget {
   const ResponsiveLayout({
@@ -16,9 +17,10 @@ class ResponsiveLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth < 600) {
+        var width = MediaQuery.of(context).size.width;
+        if (fnCheckMobile(width)) {
           return mobileBody;
-        } else if (constraints.maxWidth < 1200) {
+        } else if (fnCheckTablet(width)) {
           return tabletBody;
         } else {
           return desktopBody;
