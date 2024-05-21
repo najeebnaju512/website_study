@@ -43,7 +43,7 @@ class CreateStudentController extends GetxController {
           pincode: int.parse(pinControl.text),
           country: countryControl.text));
 
-      //need to change here
+      //navigation
       Get.to(const StudentList());
       resetAll();
     } else {

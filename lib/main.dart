@@ -4,6 +4,8 @@ import 'package:nexteons_study_project/utils/constant/app_const.dart';
 
 import 'model/data_model.dart';
 import 'screen/students/create/create_view.dart';
+
+
   RxList<Student> students = [
     Student(
         firstname: "Akarsh",
@@ -15,6 +17,8 @@ import 'screen/students/create/create_view.dart';
         pincode: 123123,
         country: "India")
   ].obs;
+
+  
 void main() {
   runApp(const MyApp());
 }
