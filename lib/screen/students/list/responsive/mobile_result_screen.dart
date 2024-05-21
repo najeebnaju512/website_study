@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:nexteons_study_project/utils/color_theme.dart';
+import 'package:nexteons_study_project/utils/constant/app_const.dart';
 import 'package:nexteons_study_project/utils/text_styles.dart';
 
 import '../../../../main.dart';
@@ -24,7 +25,7 @@ class MobileResultScreen extends StatelessWidget {
                     color: ColorTheme.darkgrey.withOpacity(.8),
                     child: GestureDetector(
                       onTap: () {
-                        Get.toNamed('/create');
+                        GoRouter.of(navigatorKey.currentContext!).go('/create');
                       },
                       child: ListTile(
                         leading: const Icon(

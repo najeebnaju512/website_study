@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nexteons_study_project/screen/students/list/list_view.dart';
-import 'package:nexteons_study_project/utils/constant/app_const.dart';
+import 'package:nexteons_study_project/routes/app_routes.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'model/data_model.dart';
-import 'screen/students/create/create_view.dart';
 
 RxList<Student> students = [
   Student(
@@ -29,15 +27,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return GetMaterialApp.router(
       title: 'Nexteons Study',
-      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
-      initialRoute: '/create',
-      getPages: [
-        GetPage(name: '/create', page: () => const StudentsCreate()),
-        GetPage(name: '/result', page: () => const StudentResultList()),
-      ],
+      routeInformationParser: router.routeInformationParser,
+      routeInformationProvider: router.routeInformationProvider,
+      routerDelegate: router.routerDelegate,
     );
   }
 }

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../main.dart';
 import '../../../../utils/color_theme.dart';
+import '../../../../utils/constant/app_const.dart';
 import '../../../../utils/text_styles.dart';
 import 'widget/student_card.dart';
 
@@ -48,7 +50,7 @@ class TabletResultScreen extends StatelessWidget {
                               ? GestureDetector(
                                   onTap: () {
                                     //need to change
-                                    Get.toNamed('/create');
+                                    GoRouter.of(navigatorKey.currentContext!).go('/create');
                                   },
                                   child: Card(
                                     elevation: 0,
