@@ -16,7 +16,7 @@ class StudentResultList extends StatefulWidget {
 class _StudentResultListState extends State<StudentResultList> {
   @override
   Widget build(BuildContext context) {
-    return const PlaceHolder(
+    return const FrameAdjuster(
         child: ResponsiveLayout(
             mobileBody: MobileResultScreen(),
             tabletBody: TabletResultScreen(),

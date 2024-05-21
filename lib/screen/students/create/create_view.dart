@@ -32,7 +32,7 @@ class _StudentsCreateState extends State<StudentsCreate> {
 
   @override
   Widget build(BuildContext context) {
-    return PlaceHolder(
+    return FrameAdjuster(
       child: ResponsiveLayout(
           mobileBody: CreateStudentMobileScreen(controller: controller),
           tabletBody: CreateStudentTabletScreen(controller: controller),

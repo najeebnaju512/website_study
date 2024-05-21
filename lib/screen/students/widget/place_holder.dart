@@ -5,8 +5,8 @@ import 'desktop_mainframe.dart';
 import 'mobile_mainframe.dart';
 import 'tablet_mainframe.dart';
 
-class PlaceHolder extends StatelessWidget {
-  const PlaceHolder({super.key, required this.child});
+class FrameAdjuster extends StatelessWidget {
+  const FrameAdjuster({super.key, required this.child});
   final Widget child;
 
   @override
