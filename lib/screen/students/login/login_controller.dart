@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 class LoginController extends GetxController {
-  
-  final mailControl = TextEditingController();
+  final nameormailControl = TextEditingController();
   final passControl = TextEditingController();
   final loginValidatkey = GlobalKey<FormState>();
 
   void resetAll() {
-    mailControl.clear();
+    nameormailControl.clear();
     passControl.clear();
   }
-  void postLogin(){
-    if (loginValidatkey.currentState!.validate()) {
-      
-    } else {
-      
-    }
+
+  void postLogin() {
+    if (loginValidatkey.currentState!.validate()) {}
   }
 }
 // ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(

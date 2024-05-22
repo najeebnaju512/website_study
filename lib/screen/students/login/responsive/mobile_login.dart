@@ -17,7 +17,8 @@ class LoginMobile extends StatelessWidget {
         key: controller.loginValidatkey,
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 20.0, right: 20, top: 70, bottom: 20),
+            padding: const EdgeInsets.only(
+                left: 20.0, right: 20, top: 70, bottom: 20),
             child: SizedBox(
               height: MediaQuery.of(context).size.height,
               child: Expanded(
@@ -49,7 +50,7 @@ class LoginMobile extends StatelessWidget {
                     LoginEntryField(
                       title: "Username or Email",
                       fontsize: 14,
-                      controller: controller.mailControl,
+                      controller: controller.nameormailControl,
                     ),
                     LoginEntryField(
                       title: "Password",
@@ -92,7 +93,9 @@ class LoginMobile extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 30,)
+                    const SizedBox(
+                      height: 30,
+                    )
                   ],
                 ),
               ),

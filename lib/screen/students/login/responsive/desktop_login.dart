@@ -39,7 +39,8 @@ class LoginDesktop extends StatelessWidget {
                         text: TextSpan(
                             text: "Welcome Back!",
                             style: GlTextStyles.robotoStyl(
-                                size: size.width * .03, weight: FontWeight.w700),
+                                size: size.width * .03,
+                                weight: FontWeight.w700),
                             children: [
                               TextSpan(
                                   text: "\nLogin your account",
@@ -51,19 +52,19 @@ class LoginDesktop extends StatelessWidget {
                       LoginEntryField(
                         title: "Username or Email",
                         fontsize: size.width * .012,
-                        controller: controller.mailControl,
+                        controller: controller.nameormailControl,
                       ),
                       LoginEntryField(
                         title: "Password",
                         fontsize: size.width * .012,
                         controller: controller.passControl,
                         validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return "Enter Password";
-                            }
-                            return null;
-                          },
-                        ),
+                          if (value == null || value.isEmpty) {
+                            return "Enter Password";
+                          }
+                          return null;
+                        },
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.end,

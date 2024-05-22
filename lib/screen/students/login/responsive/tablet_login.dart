@@ -53,7 +53,7 @@ class LoginTablet extends StatelessWidget {
                         child: LoginEntryField(
                           title: "Username or Email",
                           fontsize: size.width * .013,
-                          controller: controller.mailControl,
+                          controller: controller.nameormailControl,
                         ),
                       ),
                       Expanded(
