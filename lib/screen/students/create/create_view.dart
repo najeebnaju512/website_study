@@ -6,7 +6,7 @@ import 'package:nexteons_study_project/screen/students/create/responsive/desktop
 import 'package:nexteons_study_project/screen/students/create/responsive/mobile_screen.dart';
 import 'package:nexteons_study_project/screen/students/create/responsive/tablet_screen.dart';
 
-import '../widget/place_holder.dart';
+import '../widget/frame_adjuster.dart';
 
 class StudentsCreate extends StatefulWidget {
   const StudentsCreate({super.key});
