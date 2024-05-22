@@ -42,8 +42,8 @@ class CreateStudentTabletScreen extends StatelessWidget {
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
-                                  childAspectRatio: 16,
-                                  mainAxisExtent: 120,
+                                  childAspectRatio: 14,
+                                  mainAxisExtent: 140,
                                   mainAxisSpacing: 20,
                                   crossAxisSpacing: 50),
                           children: [
