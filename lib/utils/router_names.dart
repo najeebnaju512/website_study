@@ -3,4 +3,6 @@ class Routernames {
   static String addDatas = "addData";
   //route for page of showing data of students
   static String showDatas = "showData";
+  //route for page of login
+  static String login = "loginpage";
 }

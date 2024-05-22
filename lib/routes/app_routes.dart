@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:nexteons_study_project/screen/students/login/login_view.dart';
 import 'package:nexteons_study_project/utils/constant/app_const.dart';
 import 'package:nexteons_study_project/utils/router_names.dart';
 
@@ -10,7 +11,7 @@ final router = GoRouter(
   redirect: (context, state) {
     return null;  
   },
-  initialLocation: '/adddetails',
+  initialLocation: '/login',
   routes: [
     GoRoute(
       name: Routernames.addDatas,
@@ -21,6 +22,11 @@ final router = GoRouter(
       name: Routernames.showDatas,
       path: '/showdetails',
       builder: (context, state) => const StudentResultList(),
+    ),
+    GoRoute(
+      name: Routernames.login,
+      path: '/login',
+      builder: (context, state) => const LoginView(),
     ),
   ],
 );
