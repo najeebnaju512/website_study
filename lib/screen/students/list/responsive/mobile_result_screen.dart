@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nexteons_study_project/utils/color_theme.dart';
 import 'package:nexteons_study_project/utils/constant/app_const.dart';
+import 'package:nexteons_study_project/utils/router_names.dart';
 import 'package:nexteons_study_project/utils/text_styles.dart';
 
 import '../../../../main.dart';
@@ -22,10 +23,10 @@ class MobileResultScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                         side: const BorderSide(width: .5)),
-                    color: ColorTheme.darkgrey.withOpacity(.8),
+                    color: ColorTheme.grey,
                     child: GestureDetector(
                       onTap: () {
-                        GoRouter.of(navigatorKey.currentContext!).go('/create');
+                        navigatorKey.currentContext!.goNamed(Routernames.addDatas);
                       },
                       child: ListTile(
                         leading: const Icon(

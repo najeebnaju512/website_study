@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
+import 'package:nexteons_study_project/utils/router_names.dart';
 
 import '../../../../main.dart';
 import '../../../../utils/color_theme.dart';
@@ -50,7 +51,7 @@ class TabletResultScreen extends StatelessWidget {
                               ? GestureDetector(
                                   onTap: () {
                                     //need to change
-                                    GoRouter.of(navigatorKey.currentContext!).go('/create');
+                                    navigatorKey.currentContext!.goNamed(Routernames.addDatas);
                                   },
                                   child: Card(
                                     elevation: 0,
@@ -58,8 +59,7 @@ class TabletResultScreen extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(12),
                                         side: const BorderSide(width: 1)),
-                                    color: ColorTheme.darkgrey
-                                        .withOpacity(.8),
+                                    color: ColorTheme.grey,
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
@@ -69,7 +69,7 @@ class TabletResultScreen extends StatelessWidget {
                                         Icon(
                                           Icons.add_circle_outline,
                                           size: size.width * .07,
-                                          color: ColorTheme.black
+                                          color: ColorTheme.darkgrey
                                               .withOpacity(.6),
                                         ),
                                         Text(

@@ -35,7 +35,7 @@ class StudentCard extends StatelessWidget {
       elevation: 0,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12), side: const BorderSide(width: .5)),
-      color: ColorTheme.darkgrey.withOpacity(.8),
+      color: ColorTheme.grey,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
         child: Column(

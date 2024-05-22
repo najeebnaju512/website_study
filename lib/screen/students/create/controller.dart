@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nexteons_study_project/main.dart';
 import 'package:nexteons_study_project/model/data_model.dart';
 import 'package:nexteons_study_project/utils/constant/app_const.dart';
+import 'package:nexteons_study_project/utils/router_names.dart';
 
 import '../../../utils/color_theme.dart';
 import '../../../utils/text_styles.dart';
@@ -43,8 +44,8 @@ class CreateStudentController extends GetxController {
           pincode: int.parse(pinControl.text),
           country: countryControl.text));
 
-      //navigation
-      GoRouter.of(navigatorKey.currentContext!).go('/result');
+      //navigation to details page
+      navigatorKey.currentContext!.goNamed(Routernames.showDatas);
       resetAll();
     } else {
       ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(
