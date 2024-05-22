@@ -6,13 +6,19 @@ class LoginController extends GetxController {
   
   final mailControl = TextEditingController();
   final passControl = TextEditingController();
-  final formkey = GlobalKey<FormState>();
+  final loginValidatkey = GlobalKey<FormState>();
 
   void resetAll() {
     mailControl.clear();
     passControl.clear();
   }
-
+  void postLogin(){
+    if (loginValidatkey.currentState!.validate()) {
+      
+    } else {
+      
+    }
+  }
 }
 // ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(
 //         SnackBar(

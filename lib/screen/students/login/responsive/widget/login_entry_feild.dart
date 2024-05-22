@@ -8,13 +8,13 @@ class LoginEntryField extends StatelessWidget {
     super.key,
     required this.title,
     this.controller,
-    this.validator, required this.fontsize, this.hight,
+    this.validator,
+    required this.fontsize,
   });
   final String title;
   final TextEditingController? controller;
   final FormFieldValidator<String>? validator;
   final double? fontsize;
-  final double? hight;
 
   @override
   Widget build(BuildContext context) {
@@ -27,19 +27,16 @@ class LoginEntryField extends StatelessWidget {
           style:
               GlTextStyles.robotoStyl(size: fontsize, weight: FontWeight.w400),
         ),
-        SizedBox(
-          height: hight??null,
-          child: TextFormField(
-            validator: validator,
-            controller: controller,
-            decoration: InputDecoration(
-              fillColor: ColorTheme.white,
-              filled: true,
-              border: OutlineInputBorder(
-                borderSide: BorderSide(
-                    width: .5, color: ColorTheme.darkgrey.withOpacity(.5)),
-                borderRadius: BorderRadius.circular(10),
-              ),
+        TextFormField(
+          validator: validator,
+          controller: controller,
+          decoration: InputDecoration(
+            fillColor: ColorTheme.white,
+            filled: true,
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                  width: .5, color: ColorTheme.darkgrey.withOpacity(.5)),
+              borderRadius: BorderRadius.circular(10),
             ),
           ),
         ),

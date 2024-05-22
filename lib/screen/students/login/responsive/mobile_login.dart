@@ -13,76 +13,91 @@ class LoginMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorTheme.white,
-      body: Padding(
-        padding:
-            const EdgeInsets.only(left: 20.0, right: 20, top: 70, bottom: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: Container(
-                height: 350,
-                width: 350,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("asset/image/loginbk.jpg"))),
-              ),
-            ),
-            RichText(
-              text: TextSpan(
-                  text: "Welcome Back!",
-                  style: GlTextStyles.robotoStyl(
-                      size: 30, weight: FontWeight.w700),
+      body: Form(
+        key: controller.loginValidatkey,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 20, top: 70, bottom: 20),
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextSpan(
-                        text: "\nLogin your account",
-                        style: GlTextStyles.robotoStyl(
-                            size: 16, weight: FontWeight.w400))
-                  ]),
-            ),
-            const LoginEntryField(
-              title: "Username or Email",
-              fontsize: 14,
-            ),
-            const LoginEntryField(
-              title: "Password",
-              fontsize: 14,
-            ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.end,
-            //   crossAxisAlignment: CrossAxisAlignment.end,
-            //   children: [
-            //     GestureDetector(
-            //       onTap: () {},
-            //       child: Text(
-            //         "Forgot Password",
-            //         style: GlTextStyles.robotoStyl(
-            //             size: , weight: FontWeight.w400),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            const SizedBox(
-              height: 20,
-            ),
-            MaterialButton(
-              onPressed: () {},
-              height: 50,
-              color: ColorTheme.drkBlue,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5)),
-              child: Center(
-                child: Text(
-                  "Save & Proceed",
-                  style: GlTextStyles.robotoStyl(
-                      size: 16,
-                      weight: FontWeight.w600,
-                      color: ColorTheme.white),
+                    Center(
+                      child: Container(
+                        height: 350,
+                        width: 350,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage("asset/image/loginbk.jpg"))),
+                      ),
+                    ),
+                    RichText(
+                      text: TextSpan(
+                          text: "Welcome Back!",
+                          style: GlTextStyles.robotoStyl(
+                              size: 30, weight: FontWeight.w700),
+                          children: [
+                            TextSpan(
+                                text: "\nLogin your account",
+                                style: GlTextStyles.robotoStyl(
+                                    size: 16, weight: FontWeight.w400))
+                          ]),
+                    ),
+                    LoginEntryField(
+                      title: "Username or Email",
+                      fontsize: 14,
+                      controller: controller.mailControl,
+                    ),
+                    LoginEntryField(
+                      title: "Password",
+                      fontsize: 14,
+                      controller: controller.passControl,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Enter Password";
+                        }
+                        return null;
+                      },
+                    ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.end,
+                    //   crossAxisAlignment: CrossAxisAlignment.end,
+                    //   children: [
+                    //     GestureDetector(
+                    //       onTap: () {},
+                    //       child: Text(
+                    //         "Forgot Password",
+                    //         style: GlTextStyles.robotoStyl(
+                    //             size: , weight: FontWeight.w400),
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
+                    MaterialButton(
+                      onPressed: controller.postLogin,
+                      height: 50,
+                      color: ColorTheme.drkBlue,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Center(
+                        child: Text(
+                          "Login",
+                          style: GlTextStyles.robotoStyl(
+                              size: 16,
+                              weight: FontWeight.w600,
+                              color: ColorTheme.white),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 30,)
+                  ],
                 ),
               ),
-            )
-          ],
+            ),
+          ),
         ),
       ),
     );
