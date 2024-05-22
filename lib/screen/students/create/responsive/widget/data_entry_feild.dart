@@ -6,7 +6,6 @@ import '../../../../../utils/text_styles.dart';
 
 class DataEntryField extends StatelessWidget {
   final String title;
-  final Key? formKey;
   final TextEditingController controller;
   final FormFieldValidator<String>? validator;
   final TextInputType? keyboardType;
@@ -17,7 +16,6 @@ class DataEntryField extends StatelessWidget {
   const DataEntryField({
     super.key,
     required this.title,
-    this.formKey,
     required this.controller,
     this.validator,
     this.keyboardType,
