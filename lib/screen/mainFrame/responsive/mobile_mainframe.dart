@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../../../utils/color_theme.dart';
+import '../main_frame_controller.dart';
 
 class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final MainFrameController controller;
   const MobileAppBar({
-    super.key,
+    super.key, required this.controller,
   });
-
+  
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
