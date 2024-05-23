@@ -21,7 +21,11 @@ final router = GoRouter(
     if (await isTokenStored() == false) {
       return "/login";
     } else {
-      return null;
+      if (state.fullPath == "/login") {
+        return "/showdetails";
+      } else {
+        return null;
+      }
     }
     // return null;
   },
