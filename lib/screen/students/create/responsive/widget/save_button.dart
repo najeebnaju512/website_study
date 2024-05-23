@@ -6,13 +6,14 @@ import '../../../../../utils/text_styles.dart';
 class SaveButton extends StatelessWidget {
   const SaveButton({
     super.key,
+    required this.text,
     required this.size,
     required this.onpress,
     this.fontsize,
     this.minwidth,
     this.shight, this.swidth,
   });
-
+  final String text;
   final Size size;
   final VoidCallback onpress;
   final double? fontsize;
@@ -34,7 +35,7 @@ class SaveButton extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
         child: Center(
           child: Text(
-            "Save & Proceed",
+            text,
             style: GlTextStyles.interStyl(
                 size: fontsize,
                 weight: FontWeight.w500,

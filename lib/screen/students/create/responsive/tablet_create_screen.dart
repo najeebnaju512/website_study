@@ -130,6 +130,7 @@ class CreateStudentTabletScreen extends StatelessWidget {
                                         size: 24, weight: FontWeight.w600),
                                   )),
                               SaveButton(
+                                text: "Save",
                                 size: size,
                                 fontsize: 14,
                                 minwidth: size.width * .12,

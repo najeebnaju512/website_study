@@ -126,6 +126,7 @@ class CreateStudentDesktopScreen extends StatelessWidget {
                                   size: 24, weight: FontWeight.w600),
                             )),
                         SaveButton(
+                          text: "Save & Proceed",
                           size: size,
                           fontsize: 20,
                           minwidth: size.width * .12,
@@ -133,7 +134,7 @@ class CreateStudentDesktopScreen extends StatelessWidget {
                           swidth: size.width * .12,
                           onpress: () {
                             controller.createStudent();
-                          },
+                          }, 
                         ),
                       ],
                     ),
