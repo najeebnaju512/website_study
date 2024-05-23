@@ -31,7 +31,7 @@ class LoginMobile extends StatelessWidget {
                       width: 350,
                       decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("asset/image/loginbk.jpg"))),
+                              image: AssetImage("asset/image/loginbk.jpg"),fit: BoxFit.cover)),
                     ),
                   ),
                   RichText(
