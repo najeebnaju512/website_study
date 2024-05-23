@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/check_size.dart';
+import '../../utils/check_size.dart';
 import 'desktop_mainframe.dart';
 import 'mobile_mainframe.dart';
 import 'tablet_mainframe.dart';
