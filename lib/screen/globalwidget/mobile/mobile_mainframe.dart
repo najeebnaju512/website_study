@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/color_theme.dart';
+import '../../../utils/color_theme.dart';
 
 class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MobileAppBar({

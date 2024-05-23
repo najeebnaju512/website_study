@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_study_project/screen/globalwidget/responsive_layout.dart';
+import 'package:nexteons_study_project/utils/responsive_layout.dart';
 import 'package:nexteons_study_project/screen/students/list/responsive/desktop_result_screen.dart';
 import 'package:nexteons_study_project/screen/students/list/responsive/tablet_result_screen.dart';
 import 'package:nexteons_study_project/screen/students/list/responsive/mobile_result_screen.dart';
 
-import '../../globalwidget/frame_adjuster.dart';
+import '../../globalwidget/main_frame_adjuster.dart';
 
 class StudentResultList extends StatefulWidget {
   const StudentResultList({super.key});

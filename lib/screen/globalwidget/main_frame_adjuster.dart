@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/check_size.dart';
-import 'desktop_mainframe.dart';
-import 'mobile_mainframe.dart';
-import 'tablet_mainframe.dart';
+import 'desktop/desktop_mainframe.dart';
+import 'mobile/mobile_mainframe.dart';
+import 'tablet/tablet_mainframe.dart';
 
 class FrameAdjuster extends StatelessWidget {
   const FrameAdjuster({super.key, required this.child});

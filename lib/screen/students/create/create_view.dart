@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nexteons_study_project/screen/globalwidget/responsive_layout.dart';
+import 'package:nexteons_study_project/utils/responsive_layout.dart';
 import 'package:nexteons_study_project/screen/students/create/controller.dart';
 import 'package:nexteons_study_project/screen/students/create/responsive/desktop_create_screen.dart';
 import 'package:nexteons_study_project/screen/students/create/responsive/mobile_create_screen.dart';
 import 'package:nexteons_study_project/screen/students/create/responsive/tablet_create_screen.dart';
 
-import '../../globalwidget/frame_adjuster.dart';
+import '../../globalwidget/main_frame_adjuster.dart';
 
 class StudentsCreate extends StatefulWidget {
   const StudentsCreate({super.key});
