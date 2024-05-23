@@ -6,9 +6,10 @@ import '../main_frame_controller.dart';
 class MobileAppBar extends StatelessWidget implements PreferredSizeWidget {
   final MainFrameController controller;
   const MobileAppBar({
-    super.key, required this.controller,
+    super.key,
+    required this.controller,
   });
-  
+
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 

@@ -25,9 +25,9 @@ class FrameButton extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: GlTextStyles.robotoStyl(
+          style: GlTextStyles.interStyl(
               size: fontsize,
-              weight: FontWeight.w400,
+              weight: FontWeight.w500,
               color: ColorTheme.lightBlue),
         ),
       ),

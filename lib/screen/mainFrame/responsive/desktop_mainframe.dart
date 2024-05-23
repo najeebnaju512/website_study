@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../utils/color_theme.dart';
 import '../main_frame_controller.dart';
@@ -27,10 +28,22 @@ class DesktopMainFrame extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          FrameButton(
-              fontsize: 20, onpress: () {}, text: "Students", height: 50),
-          FrameButton(
-              fontsize: 20, onpress: () {}, text: "Teachers", height: 50)
+          ListView.builder(
+            shrinkWrap: true,
+            itemCount: controller.buttonData.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: FrameButton(
+                    fontsize: 20,
+                    onpress: () {
+                      context.goNamed(controller.buttonData[index].route);
+                    },
+                    text: controller.buttonData[index].title,
+                    height: 50),
+              );
+            },
+          )
         ],
       ),
     );

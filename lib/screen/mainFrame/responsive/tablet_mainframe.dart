@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:nexteons_study_project/screen/mainFrame/widget/frame_button.dart';
 
 import '../../../utils/color_theme.dart';
@@ -27,10 +28,22 @@ class TabletMainFrame extends StatelessWidget {
                 "asset/logo/logo.png",
               )),
               const SizedBox(height: 20,),
-          FrameButton(
-              fontsize: 15, onpress: () {}, text: "Students", height: 40),
-          FrameButton(
-              fontsize: 15, onpress: () {}, text: "Teachers", height: 40)
+          ListView.builder(
+            shrinkWrap: true,
+            itemCount: controller.buttonData.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                child: FrameButton(
+                    fontsize: 14,
+                    onpress: () {
+                      context.goNamed(controller.buttonData[index].route);
+                    },
+                    text: controller.buttonData[index].title,
+                    height: 40),
+              );
+            },
+          )
         ],
       ),
     );
