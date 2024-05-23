@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:nexteons_study_project/routes/app_routes.dart';
 import 'package:url_strategy/url_strategy.dart';
 
-import 'model/data_model.dart';
+import 'model/student_data_model.dart';
 
 RxList<Student> students = [
   Student(

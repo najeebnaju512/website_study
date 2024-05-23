@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nexteons_study_project/main.dart';
-import 'package:nexteons_study_project/model/data_model.dart';
+import 'package:nexteons_study_project/model/student_data_model.dart';
 import 'package:nexteons_study_project/utils/constant/app_const.dart';
 import 'package:nexteons_study_project/utils/router_names.dart';
 
