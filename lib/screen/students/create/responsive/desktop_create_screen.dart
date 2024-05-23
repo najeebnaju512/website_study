@@ -20,7 +20,7 @@ class CreateStudentDesktopScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(left: 120, top: 72),
           child: SizedBox(
-            height: size.width*.75,
+            height: size.width * .75,
             width: size.width * .65,
             child: SingleChildScrollView(
               child: Column(
@@ -110,33 +110,37 @@ class CreateStudentDesktopScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: size.height*.1,),
+                  SizedBox(
+                    height: size.height * .1,
+                  ),
                   SizedBox(
                     width: size.width * .65,
-                    child: Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          TextButton(
-                              onPressed: controller.resetAll,
-                              child: Text(
-                                "Reset All",
-                                style: GlTextStyles.interStyl(
-                                    size: 24, weight: FontWeight.w600),
-                              )),
-                          SaveButton(
-                            size: size,
-                            fontsize: 20,
-                            minwidth: size.width * .12,
-                            shight: size.width * .025,
-                            swidth: size.width * .12,
-                            onpress: controller.createStudent,
-                          ),
-                        ],
-                      ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButton(
+                            onPressed: controller.resetAll,
+                            child: Text(
+                              "Reset All",
+                              style: GlTextStyles.interStyl(
+                                  size: 24, weight: FontWeight.w600),
+                            )),
+                        SaveButton(
+                          size: size,
+                          fontsize: 20,
+                          minwidth: size.width * .12,
+                          shight: size.width * .025,
+                          swidth: size.width * .12,
+                          onpress: () {
+                            controller.createStudent();
+                          },
+                        ),
+                      ],
                     ),
                   ),
-                  SizedBox(height: size.height*.1,),
+                  SizedBox(
+                    height: size.height * .1,
+                  ),
                 ],
               ),
             ),

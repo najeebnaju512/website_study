@@ -2,7 +2,7 @@ class Student {
   final String firstname;
   final String lastname;
   final String email;
-  final int id;
+  final String id;
   final String district;
   final String phoneNumber;
   final int pincode;

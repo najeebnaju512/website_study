@@ -21,7 +21,7 @@ class StudentCard extends StatelessWidget {
   final String firstname;
   final String lastname;
   final String mail;
-  final int id;
+  final String id;
   final String district;
   final String phone;
   final int pincode;
@@ -53,7 +53,7 @@ class StudentCard extends StatelessWidget {
                   size: subFontsize, weight: FontWeight.w400),
             ),
             Text(
-              "$id",
+              id,
               style: GlTextStyles.interStyl(
                   size: subFontsize, weight: FontWeight.w400),
             ),

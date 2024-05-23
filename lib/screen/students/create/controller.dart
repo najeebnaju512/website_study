@@ -38,16 +38,16 @@ class CreateStudentController extends GetxController {
           firstname: firstnameControl.text,
           lastname: lastnameControl.text,
           email: mailControl.text,
-          id: int.parse(uidControl.text),
+          id: uidControl.text,
           district: distControl.text,
           phoneNumber: phoneControl.text,
           pincode: int.parse(pinControl.text),
           country: countryControl.text));
+      // print("done");
 
       //navigation to details page
+      navigatorKey.currentContext!.goNamed(Routernames.showDatas);
       // navigatorKey.currentContext!.goNamed(Routernames.showDatas);
-      GoRouter.of(navigatorKey.currentContext!)
-          .goNamed(Routernames.showDatas);
       resetAll();
     } else {
       ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(

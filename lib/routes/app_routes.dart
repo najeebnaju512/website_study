@@ -11,8 +11,15 @@ import '../screen/students/list/list_view.dart';
 final router = GoRouter(
   navigatorKey: navigatorKey,
   redirect: (context, state) async {
-    if (await isTokenStored()) {
-      return "/adddetails";
+    /// if token ==null
+    /// login
+    /// token !=null
+    /// login->showdetails
+    ///
+    ///
+    /// token!=null --->showdetails
+    if (await isTokenStored() == false) {
+      return "/login";
     } else {
       return null;
     }
@@ -23,17 +30,17 @@ final router = GoRouter(
     GoRoute(
       name: Routernames.addDatas,
       path: '/adddetails',
-      builder: (context, state) =>  const StudentsCreate(),
+      builder: (context, state) => const StudentsCreate(),
     ),
     GoRoute(
       name: Routernames.showDatas,
       path: '/showdetails',
-      builder: (context, state) =>  const StudentResultList(),
+      builder: (context, state) => const StudentResultList(),
     ),
     GoRoute(
       name: Routernames.login,
       path: '/login',
-      builder: (context, state) =>  const LoginView(),
+      builder: (context, state) => const LoginView(),
     ),
   ],
 );
