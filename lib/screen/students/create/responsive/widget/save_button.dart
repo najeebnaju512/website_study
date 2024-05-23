@@ -37,7 +37,7 @@ class SaveButton extends StatelessWidget {
             "Save & Proceed",
             style: GlTextStyles.interStyl(
                 size: fontsize,
-                weight: FontWeight.w600,
+                weight: FontWeight.w500,
                 color: ColorTheme.white),
           ),
         ),

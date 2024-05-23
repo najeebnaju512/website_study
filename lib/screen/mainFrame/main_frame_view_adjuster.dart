@@ -37,14 +37,26 @@ class _FrameAdjusterState extends State<FrameAdjuster> {
       builder: (context, constraints) {
         var size = MediaQuery.of(context).size;
         return Scaffold(
-          drawer: fnCheckMobile(size.width) ? DrawerRefactored(controller: controller,) : null,
-            appBar: fnCheckMobile(size.width) ? MobileAppBar(controller: controller,) : null,
+            appBar: fnCheckMobile(size.width)
+                ? MobileAppBar(
+                    controller: controller,
+                  )
+                : null,
+            drawer: fnCheckMobile(size.width)
+                ? DrawerRefactored(
+                    controller: controller,
+                  )
+                : null,
             body: Row(
               children: [
                 if (fnCheckTablet(size.width) && !fnCheckMobile(size.width))
-                  TabletMainFrame(controller: controller,),
+                  TabletMainFrame(
+                    controller: controller,
+                  ),
                 if (!fnCheckMobile(size.width) && !fnCheckTablet(size.width))
-                  DesktopMainFrame(controller: controller,),
+                  DesktopMainFrame(
+                    controller: controller,
+                  ),
                 Expanded(child: widget.child)
               ],
             ));
