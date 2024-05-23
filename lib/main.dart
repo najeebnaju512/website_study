@@ -10,10 +10,10 @@ RxList<Student> students = [
       firstname: "Akarsh",
       lastname: "B R",
       email: "akarsh@gmail.com",
-      id: "356456",
+      id: "Ak356456",
       district: "Calicut",
-      phoneNumber: "1234567456",
-      pincode: 123123,
+      phoneNumber: "9947956456",
+      pincode: 678435,
       country: "India")
 ].obs;
 
