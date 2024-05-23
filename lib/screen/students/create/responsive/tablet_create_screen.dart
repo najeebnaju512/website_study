@@ -21,30 +21,31 @@ class CreateStudentTabletScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(left: 120, top: 63),
             child: SizedBox(
-              height: size.height,
+              height: size.width*.75,
               width: size.width * .5,
-              child: Flexible(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "BASIC DETAILS",
-                      style: GlTextStyles.interStyl(
-                          size: 32, weight: FontWeight.w700),
-                    ),
-                    SizedBox(
-                      height: size.width * .1,
-                    ),
-                    Center(
-                      child: Flexible(
+              child: SingleChildScrollView(
+                child: Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "BASIC DETAILS",
+                        style: GlTextStyles.interStyl(
+                            size: 32, weight: FontWeight.w700),
+                      ),
+                      SizedBox(
+                        height: size.width * .1,
+                      ),
+                      Center(
                         child: GridView(
                           shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2,
-                                  childAspectRatio: 14,
-                                  mainAxisExtent: 140,
-                                  mainAxisSpacing: 20,
+                                  childAspectRatio: 16,
+                                  mainAxisExtent: 120,
+                                  mainAxisSpacing: 10,
                                   crossAxisSpacing: 50),
                           children: [
                             //validate min 3 lettoers needed
@@ -113,40 +114,40 @@ class CreateStudentTabletScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: size.width * .1,
-                    ),
-                    Center(
-                      child: SizedBox(
-                        width: size.width * .5,
-                        child: Expanded(
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                TextButton(
-                                    onPressed: controller.resetAll,
-                                    child: Text(
-                                      "Reset All",
-                                      style: GlTextStyles.interStyl(
-                                          size: 24, weight: FontWeight.w600),
-                                    )),
-                                SaveButton(
-                                  size: size,
-                                  fontsize: 14,
-                                  minwidth: size.width * .12,
-                                  shight: size.width * .045,
-                                  swidth: size.width * .15,
-                                  onpress: controller.createStudent,
-                                ),
-                              ]),
+                      SizedBox(
+                        height: size.width * .1,
+                      ),
+                      Center(
+                        child: SizedBox(
+                          width: size.width * .5,
+                          child: Expanded(
+                            child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  TextButton(
+                                      onPressed: controller.resetAll,
+                                      child: Text(
+                                        "Reset All",
+                                        style: GlTextStyles.interStyl(
+                                            size: 24, weight: FontWeight.w600),
+                                      )),
+                                  SaveButton(
+                                    size: size,
+                                    fontsize: 14,
+                                    minwidth: size.width * .12,
+                                    shight: size.width * .045,
+                                    swidth: size.width * .15,
+                                    onpress: controller.createStudent,
+                                  ),
+                                ]),
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: size.width * .05,
-                    )
-                  ],
+                      SizedBox(
+                        height: size.width * .05,
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nexteons_study_project/utils/color_theme.dart';
-import 'package:nexteons_study_project/utils/constant/app_const.dart';
 import 'package:nexteons_study_project/utils/router_names.dart';
 import 'package:nexteons_study_project/utils/text_styles.dart';
 
 import '../../../../main.dart';
+import '../../../../utils/constant/app_const.dart';
 import 'widget/student_card.dart';
 
 class MobileResultScreen extends StatelessWidget {
@@ -18,16 +18,17 @@ class MobileResultScreen extends StatelessWidget {
           padding: const EdgeInsets.only(right: 20, left: 20, top: 15),
           child: ListView.builder(
             itemBuilder: (context, index) => index == students.length
-                ? Card(
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        side: const BorderSide(width: .5)),
-                    color: ColorTheme.grey,
-                    child: GestureDetector(
-                      onTap: () {
-                        navigatorKey.currentContext!.goNamed(Routernames.addDatas);
-                      },
+                ? GestureDetector(
+                    onTap: () {
+                      GoRouter.of(navigatorKey.currentContext!)
+                        .goNamed(Routernames.addDatas);
+                    },
+                    child: Card(
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          side: const BorderSide(width: .5)),
+                      color: ColorTheme.grey,
                       child: ListTile(
                         leading: const Icon(
                           Icons.add_circle_outline_outlined,

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nexteons_study_project/screen/students/widget/responsive_layout.dart';
 import 'package:nexteons_study_project/screen/students/create/controller.dart';
-import 'package:nexteons_study_project/screen/students/create/responsive/desktop_screen.dart';
-import 'package:nexteons_study_project/screen/students/create/responsive/mobile_screen.dart';
-import 'package:nexteons_study_project/screen/students/create/responsive/tablet_screen.dart';
+import 'package:nexteons_study_project/screen/students/create/responsive/desktop_create_screen.dart';
+import 'package:nexteons_study_project/screen/students/create/responsive/mobile_create_screen.dart';
+import 'package:nexteons_study_project/screen/students/create/responsive/tablet_create_screen.dart';
 
 import '../widget/frame_adjuster.dart';
 

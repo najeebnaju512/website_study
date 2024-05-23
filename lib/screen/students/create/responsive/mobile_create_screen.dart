@@ -18,10 +18,10 @@ class CreateStudentMobileScreen extends StatelessWidget {
         padding: const EdgeInsets.only(right: 20, left: 20, top: 15),
         child: Form(
           key: controller.formkey,
-          child: Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
+          child: SizedBox(
+            height: size.height,
+            width: size.width,
+            child: ListView(
               children: [
                 Text(
                   "BASIC DETAILS",
@@ -93,7 +93,7 @@ class CreateStudentMobileScreen extends StatelessWidget {
                     title: "Country",
                     fontsize: 12,
                     controller: controller.countryControl),
-                const Spacer(),
+                SizedBox(height: size.width * .1),
                 Center(
                   child: SaveButton(
                     size: size,

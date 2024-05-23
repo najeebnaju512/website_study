@@ -45,7 +45,9 @@ class CreateStudentController extends GetxController {
           country: countryControl.text));
 
       //navigation to details page
-      navigatorKey.currentContext!.goNamed(Routernames.showDatas);
+      // navigatorKey.currentContext!.goNamed(Routernames.showDatas);
+      GoRouter.of(navigatorKey.currentContext!)
+          .goNamed(Routernames.showDatas);
       resetAll();
     } else {
       ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(

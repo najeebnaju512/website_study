@@ -36,7 +36,8 @@ class LoginController extends GetxController {
           var message = "You are successfully logged in";
           AppSnackbar.oneTimeSnackBar(message,
               context: navigatorKey.currentContext!, bgColor: Colors.green);
-          navigatorKey.currentContext!.goNamed(Routernames.addDatas);
+          GoRouter.of(navigatorKey.currentContext!)
+              .goNamed(Routernames.showDatas);
         } else {
           var message = response["errors"][0]["message"];
           AppSnackbar.oneTimeSnackBar(message,

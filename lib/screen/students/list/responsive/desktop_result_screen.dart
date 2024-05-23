@@ -22,14 +22,14 @@ class DesktopResultScreen extends StatelessWidget {
         child: SizedBox(
           height: size.height,
           width: size.width * .65,
-          child: Flexible(
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "NEW STUDENTS",
-                  style: GlTextStyles.interStyl(
-                      size: 35, weight: FontWeight.w700),
+                  style:
+                      GlTextStyles.interStyl(size: 35, weight: FontWeight.w700),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 50),
@@ -37,8 +37,7 @@ class DesktopResultScreen extends StatelessWidget {
                     child: Obx(
                       () => GridView.builder(
                         shrinkWrap: true,
-                        gridDelegate:
-                            SliverGridDelegateWithMaxCrossAxisExtent(
+                        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                           childAspectRatio: .05,
                           mainAxisExtent: size.width * .14,
                           mainAxisSpacing: 10,
@@ -50,14 +49,13 @@ class DesktopResultScreen extends StatelessWidget {
                           return index == students.length
                               ? GestureDetector(
                                   onTap: () {
-                                    //need to change
-                                    navigatorKey.currentContext!.goNamed(Routernames.addDatas);
+                                    GoRouter.of(navigatorKey.currentContext!)
+                                      .goNamed(Routernames.addDatas);
                                   },
                                   child: Card(
                                     elevation: 0,
                                     shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(12),
+                                        borderRadius: BorderRadius.circular(12),
                                         side: const BorderSide(width: 1)),
                                     color: ColorTheme.grey,
                                     child: Column(
