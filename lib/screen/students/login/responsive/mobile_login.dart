@@ -15,14 +15,14 @@ class LoginMobile extends StatelessWidget {
       backgroundColor: ColorTheme.white,
       body: Form(
         key: controller.loginValidatkey,
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.only(
-                left: 20.0, right: 20, top: 70, bottom: 20),
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height,
+        child: Padding(
+          padding: const EdgeInsets.only(
+              left: 20.0, right: 20, top: 70, bottom: 20),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: SingleChildScrollView(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
@@ -46,10 +46,16 @@ class LoginMobile extends StatelessWidget {
                                   size: 16, weight: FontWeight.w400))
                         ]),
                   ),
+                   const SizedBox(
+                    height: 30,
+                  ),
                   LoginEntryField(
                     title: "Username or Email",
                     fontsize: 14,
                     controller: controller.nameormailControl,
+                  ),
+                   const SizedBox(
+                    height: 15,
                   ),
                   LoginEntryField(
                     title: "Password",
@@ -76,6 +82,9 @@ class LoginMobile extends StatelessWidget {
                   //     ),
                   //   ],
                   // ),
+                   const SizedBox(
+                    height: 30,
+                  ),
                   MaterialButton(
                     onPressed: controller.postLogin,
                     height: 50,

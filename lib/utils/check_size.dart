@@ -1,5 +1,5 @@
 bool fnCheckMobile(double width) {
-  return (width < 650);
+  return (width < 700);
 }
 
 bool fnCheckTablet(double width) {
