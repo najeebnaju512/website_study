@@ -114,7 +114,7 @@ class CreateStudentMobileScreen extends StatelessWidget {
                             size: 12, weight: FontWeight.w600),
                       )),
                 ),
-                const Spacer()
+                SizedBox(height: size.width * .03),
               ],
             ),
           ),

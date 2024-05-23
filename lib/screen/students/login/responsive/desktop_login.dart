@@ -15,93 +15,91 @@ class LoginDesktop extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorTheme.white,
       body: Center(
-        child: Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                height: size.width * .45,
-                width: size.width * .45,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("asset/image/loginbk.jpg"))),
-              ),
-              SizedBox(
-                height: size.width * .3,
-                width: size.width * .3,
-                child: Form(
-                  key: controller.loginValidatkey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      RichText(
-                        text: TextSpan(
-                            text: "Welcome Back!",
-                            style: GlTextStyles.robotoStyl(
-                                size: size.width * .03,
-                                weight: FontWeight.w700),
-                            children: [
-                              TextSpan(
-                                  text: "\nLogin your account",
-                                  style: GlTextStyles.robotoStyl(
-                                      size: size.width * .015,
-                                      weight: FontWeight.w400))
-                            ]),
-                      ),
-                      LoginEntryField(
-                        title: "Username or Email",
-                        fontsize: size.width * .012,
-                        controller: controller.nameormailControl,
-                      ),
-                      LoginEntryField(
-                        title: "Password",
-                        fontsize: size.width * .012,
-                        controller: controller.passControl,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return "Enter Password";
-                          }
-                          return null;
-                        },
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          GestureDetector(
-                            onTap: () {},
-                            child: Text(
-                              "Forgot Password",
-                              style: GlTextStyles.robotoStyl(
-                                  size: size.width * .012,
-                                  weight: FontWeight.w400),
-                            ),
-                          ),
-                        ],
-                      ),
-                      MaterialButton(
-                        onPressed: controller.postLogin,
-                        height: size.width * .035,
-                        color: ColorTheme.drkBlue,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              height: size.width * .45,
+              width: size.width * .45,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("asset/image/loginbk.jpg"))),
+            ),
+            SizedBox(
+              height: size.width * .3,
+              width: size.width * .3,
+              child: Form(
+                key: controller.loginValidatkey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                          text: "Welcome Back!",
+                          style: GlTextStyles.robotoStyl(
+                              size: size.width * .03,
+                              weight: FontWeight.w700),
+                          children: [
+                            TextSpan(
+                                text: "\nLogin your account",
+                                style: GlTextStyles.robotoStyl(
+                                    size: size.width * .015,
+                                    weight: FontWeight.w400))
+                          ]),
+                    ),
+                    LoginEntryField(
+                      title: "Username or Email",
+                      fontsize: size.width * .012,
+                      controller: controller.nameormailControl,
+                    ),
+                    LoginEntryField(
+                      title: "Password",
+                      fontsize: size.width * .012,
+                      controller: controller.passControl,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Enter Password";
+                        }
+                        return null;
+                      },
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          onTap: () {},
                           child: Text(
-                            "Login",
+                            "Forgot Password",
                             style: GlTextStyles.robotoStyl(
                                 size: size.width * .012,
-                                weight: FontWeight.w600,
-                                color: ColorTheme.white),
+                                weight: FontWeight.w400),
                           ),
                         ),
+                      ],
+                    ),
+                    MaterialButton(
+                      onPressed: controller.postLogin,
+                      height: size.width * .035,
+                      color: ColorTheme.drkBlue,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Center(
+                        child: Text(
+                          "Login",
+                          style: GlTextStyles.robotoStyl(
+                              size: size.width * .012,
+                              weight: FontWeight.w600,
+                              color: ColorTheme.white),
+                        ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );
