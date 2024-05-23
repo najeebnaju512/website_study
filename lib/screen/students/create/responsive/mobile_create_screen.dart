@@ -96,7 +96,7 @@ class CreateStudentMobileScreen extends StatelessWidget {
                 SizedBox(height: size.width * .1),
                 Center(
                   child: SaveButton(
-                    text: "Save & Proceed",
+                    text: "Save",
                     size: size,
                     fontsize: 10,
                     shight: 40,
