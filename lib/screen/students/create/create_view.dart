@@ -6,7 +6,7 @@ import 'package:nexteons_study_project/screen/students/create/responsive/desktop
 import 'package:nexteons_study_project/screen/students/create/responsive/mobile_create_screen.dart';
 import 'package:nexteons_study_project/screen/students/create/responsive/tablet_create_screen.dart';
 
-import '../../globalwidget/main_frame_adjuster.dart';
+import '../../globalwidget/main_frame_view_adjuster.dart';
 
 class StudentsCreate extends StatefulWidget {
   const StudentsCreate({super.key});
