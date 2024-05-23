@@ -12,7 +12,7 @@ final router = GoRouter(
   navigatorKey: navigatorKey,
   redirect: (context, state) async {
     if (await hasAccessToken()) {
-      return "/adddetails";
+      return "/showdetails";
     } else {
       return null;
     }
