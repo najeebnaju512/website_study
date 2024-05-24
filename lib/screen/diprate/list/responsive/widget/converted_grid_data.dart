@@ -5,8 +5,8 @@ import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 import '../../../../../model/teacher_list/teacher_model.dart';
 
 // Data Conversion for ui==> which act as row in ui of table==>DataGridRowAdapter
-class ConvertedTeacherData extends DataGridSource {
-  ConvertedTeacherData(List<Teacher> teacher) {
+class ConvertedGridData extends DataGridSource {
+  ConvertedGridData(List<Teacher> teacher) {
     datagridrow = teacher
         .map<DataGridRow>((teacher) => DataGridRow(cells: [
               DataGridCell<int>(columnName: 'id', value: teacher.id),

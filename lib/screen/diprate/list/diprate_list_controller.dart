@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 import '../../../model/teacher_list/teacher_model.dart';
 
-class TeacherListController extends GetxController {
+class DipRateListController extends GetxController {
   RxList<Teacher> getTeacher() {
     return [
       Teacher(1, "Sajin", "Dot Net", 12000),

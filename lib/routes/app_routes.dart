@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../screen/students/create/create_view.dart';
 import '../screen/students/list/list_view.dart';
-import '../screen/teachers/list/teacher_list_view.dart';
+import '../screen/diprate/list/diprate_list_view.dart';
 
 final router = GoRouter(
   navigatorKey: navigatorKey,
@@ -50,7 +50,7 @@ final router = GoRouter(
     GoRoute(
       name: Routernames.techerData,
       path: '/teachers',
-      builder: (context, state) => const TeacherListView(),
+      builder: (context, state) => const DipRateListView(),
     ),
   ],
 );

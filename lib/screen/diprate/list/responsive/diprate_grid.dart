@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
 import '../../../../model/teacher_list/teacher_model.dart';
-import '../teacher_list_controller.dart';
-import 'widget/converted_teacher_data.dart';
+import '../diprate_list_controller.dart';
+import 'widget/converted_grid_data.dart';
 import 'widget/header_text.dart';
 
 class TeacherDataGrid extends StatefulWidget {
-  final TeacherListController controller;
+  final DipRateListController controller;
   const TeacherDataGrid({super.key, required this.controller});
 
   @override
@@ -16,12 +16,12 @@ class TeacherDataGrid extends StatefulWidget {
 
 class TeacherDataGridState extends State<TeacherDataGrid> {
   late List<Teacher> teacherlist;
-  late ConvertedTeacherData convertedTeacherData;
+  late ConvertedGridData convertedTeacherData;
 
   @override
   void initState() {
     teacherlist = widget.controller.getTeacher(); // fetching data to UI
-    convertedTeacherData = ConvertedTeacherData(teacherlist); // used as widget
+    convertedTeacherData = ConvertedGridData(teacherlist); // used as widget
     super.initState();
   }
 

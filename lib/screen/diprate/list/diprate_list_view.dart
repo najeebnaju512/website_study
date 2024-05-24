@@ -3,28 +3,28 @@ import 'package:get/get.dart';
 
 import '../../../utils/responsive_layout.dart';
 import '../../mainFrame/main_frame_view_adjuster.dart';
-import 'responsive/teacher_list_grid.dart';
-import 'teacher_list_controller.dart';
+import 'responsive/diprate_grid.dart';
+import 'diprate_list_controller.dart';
 
-class TeacherListView extends StatefulWidget {
-  const TeacherListView({super.key});
+class DipRateListView extends StatefulWidget {
+  const DipRateListView({super.key});
 
   @override
-  State<TeacherListView> createState() => _TeacherListViewState();
+  State<DipRateListView> createState() => _DipRateListViewState();
 }
 
-class _TeacherListViewState extends State<TeacherListView> {
-  late TeacherListController controller;
+class _DipRateListViewState extends State<DipRateListView> {
+  late DipRateListController controller;
   final String tag = DateTime.now().toString();
   @override
   void initState() {
-    controller = Get.put(TeacherListController(), tag: tag);
+    controller = Get.put(DipRateListController(), tag: tag);
     super.initState();
   }
 
   @override
   void dispose() {
-    Get.delete<TeacherListController>(tag: tag);
+    Get.delete<DipRateListController>(tag: tag);
     super.dispose();
   }
 
