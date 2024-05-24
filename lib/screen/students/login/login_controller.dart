@@ -1,9 +1,8 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
-import 'package:nexteons_study_project/model/login/login_body_mode.dart';
+import 'package:nexteons_study_project/model/login/login_body_model.dart';
 import 'package:nexteons_study_project/repository/login/login_api.dart';
 import 'package:nexteons_study_project/utils/app_snackbar.dart';
 import 'package:nexteons_study_project/utils/constant/storage_keys.dart';
@@ -49,7 +48,6 @@ class LoginController extends GetxController {
 
   storeRecivedData(accesstoken) async {
     sharedPreferences = await SharedPreferences.getInstance();
-    String token = json.encode(accesstoken);
-    sharedPreferences.setString(StorageKeys.accessToken, token);
+    sharedPreferences.setString(StorageKeys.accessToken, accesstoken);
   }
 }

@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:nexteons_study_project/model/dip_rate_data_model/list.dart';
 import 'package:nexteons_study_project/utils/color_theme.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
-import '../../../../../model/teacher_list/teacher_model.dart';
-
 // Data Conversion for ui==> which act as row in ui of table==>DataGridRowAdapter
 class ConvertedGridData extends DataGridSource {
-  ConvertedGridData(List<Teacher> teacher) {
-    datagridrow = teacher
-        .map<DataGridRow>((teacher) => DataGridRow(cells: [
-              DataGridCell<int>(columnName: 'id', value: teacher.id),
-              DataGridCell<String>(columnName: 'name', value: teacher.name),
-              DataGridCell<String>(
-                  columnName: 'subject', value: teacher.subject),
-              DataGridCell<double>(columnName: 'salary', value: teacher.salary),
-            ]))
-        .toList();
+  List<DataGridRow> datagridrow=[];
+  ConvertedGridData(List<DipListElement> listitems) {
+    datagridrow = listitems.map<DataGridRow>((listitems) {
+      return DataGridRow(cells: [
+        DataGridCell<String>(columnName: 'id', value: listitems.id),
+        DataGridCell<String>(columnName: 'name', value: listitems.name),
+        DataGridCell<int>(columnName: 'subject', value: listitems.rate),
+      ]);
+    }).toList();
   }
 
-  late List<DataGridRow> datagridrow;
+  
   @override
   List<DataGridRow> get rows => datagridrow;
 

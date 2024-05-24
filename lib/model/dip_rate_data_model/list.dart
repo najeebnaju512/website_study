@@ -1,16 +1,15 @@
-
-class ListElement {
+class DipListElement {
   String? name;
   int? rate;
   String? id;
 
-  ListElement({
+  DipListElement({
     this.name,
     this.rate,
     this.id,
   });
 
-  factory ListElement.fromJson(Map<String, dynamic> json) => ListElement(
+  factory DipListElement.fromJson(Map<String, dynamic> json) => DipListElement(
         name: json["_name"],
         rate: json["_rate"],
         id: json["_id"],

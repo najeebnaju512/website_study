@@ -30,34 +30,3 @@ class LoginBody {
   // Getter method to access loginbody
   Map<String, dynamic> get loginbody => _loginbody;
 }
-
-// class LoginBody {
-//   LoginBody(this._nameORmail, this._password) {
-//     Map<String, dynamic> loginbody = {
-//       "query": '''
-//       query Auth_Login(\$loginData: LoginInput!) {
-//         Auth_Login(loginData: \$loginData) {
-//           accessToken
-//         }
-//       }
-//       ''',
-//       "variables": {
-//         "loginData": {
-//           "_deviceType": 0,
-//           "_email": _nameORmail,
-//           "_password": _password,
-//           "_userType": 0,
-//           "deviceId": "",
-//           "deviceName": "test",
-//           "deviceToken": "test",
-//           "grant_type": "password"
-//         }
-//       }
-//     };
-//     return loginbody;
-//   }
-
-//   final String _nameORmail;
-//   final String _password;
-
-// }

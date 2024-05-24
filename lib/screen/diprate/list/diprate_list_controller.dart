@@ -1,20 +1,80 @@
-import 'package:get/get.dart';
+import 'dart:developer';
 
-import '../../../model/teacher_list/teacher_model.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:nexteons_study_project/model/dip_rate_data_model/list.dart';
+import 'package:nexteons_study_project/model/dip_rate_data_model/sample_datas.dart';
+import 'package:nexteons_study_project/repository/diprate/get_dip_rate_api.dart';
+import 'package:nexteons_study_project/utils/app_snackbar.dart';
+import 'package:nexteons_study_project/utils/constant/app_const.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../../utils/constant/storage_keys.dart';
 
 class DipRateListController extends GetxController {
-  RxList<Teacher> getTeacher() {
-    return [
-      Teacher(1, "Sajin", "Dot Net", 12000),
-      Teacher(2, "Sreejith", "Python", 10000),
-      Teacher(3, "Amos", "Data Science", 13000),
-      Teacher(4, "Akarsh", "Java", 12500),
-      Teacher(5, "Nitha", "Flutter", 25000),
-      Teacher(6, "Nasri", "C", 16000),
-      Teacher(7, "Safa", "C++", 14000),
-      Teacher(8, "Anand", "MERN", 17000),
-      Teacher(9, "Anuvind", "Rust", 16500),
-      Teacher(10, "Jabbar", "Cyber Security", 50000),
-    ].obs;
+  late SharedPreferences sharedPreferences;
+  var dpilist = <DipListElement>[].obs;
+
+  Future<void> getData() async {
+    Map<String, String> headers = await getApiheader();
+    if (headers.isEmpty) {
+      var message = "Failed to get API headers";
+      log(message);
+      return;
+    }
+
+    Map<String, dynamic> payload = {
+      'query': '''
+        query List(\$filterOptions: ListDpiInput!) {
+          DpiRate_List(FilterOptions: \$filterOptions) {
+            list {
+              _name
+              _rate
+              _id
+            }
+            totalCount
+          }
+        }
+      ''',
+      'variables': {
+        "filterOptions": {
+          "branchIds": "6631da5ce9efa0bd84a86852",
+          "limit": -1,
+          "skip": 0,
+          "statusArray": [1]
+        }
+      }
+    };
+
+    try {
+      var responsebody =
+          await GetDipRate.fetchData(header: headers, data: payload);
+      if (responsebody["data"] != null) {
+        SampleDipRateModel sampleDipRateModel =
+            SampleDipRateModel.fromJson(responsebody);
+
+        // Updating dpilist with new datas fetched
+        dpilist.value = sampleDipRateModel.data?.dpiRateList?.list ?? [];
+
+        AppSnackbar.oneTimeSnackBar("Success",
+            context: navigatorKey.currentContext!, bgColor: Colors.green);
+      } else {
+        AppSnackbar.oneTimeSnackBar("Failed to Fetch Data",
+            context: navigatorKey.currentContext!, bgColor: Colors.red);
+      }
+    } catch (e) {
+      log("An error occurred: $e");
+    }
+  }
+
+  Future<Map<String, String>> getApiheader() async {
+    sharedPreferences = await SharedPreferences.getInstance();
+    String? accessToken = sharedPreferences.getString(StorageKeys.accessToken);
+    if (accessToken != null) {
+      return {"X-Tenant-Id": "RL0582", "Authorization": "Bearer $accessToken"};
+    } else {
+      log("accesstoken is null");
+      return {};
+    }
   }
 }

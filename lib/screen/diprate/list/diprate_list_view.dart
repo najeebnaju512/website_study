@@ -19,6 +19,9 @@ class _DipRateListViewState extends State<DipRateListView> {
   @override
   void initState() {
     controller = Get.put(DipRateListController(), tag: tag);
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      controller.getData();
+    });
     super.initState();
   }
 
@@ -32,9 +35,9 @@ class _DipRateListViewState extends State<DipRateListView> {
   Widget build(BuildContext context) {
     return FrameAdjuster(
       child: ResponsiveLayout(
-          mobileBody: TeacherDataGrid(controller: controller),
-          tabletBody: TeacherDataGrid(controller: controller),
-          desktopBody: TeacherDataGrid(controller: controller)),
+          mobileBody: DpiDataGrid(controller: controller),
+          tabletBody: DpiDataGrid(controller: controller),
+          desktopBody: DpiDataGrid(controller: controller)),
     );
   }
 }

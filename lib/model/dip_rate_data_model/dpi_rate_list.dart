@@ -1,7 +1,7 @@
-import 'package:nexteons_study_project/model/sample_datas/list.dart';
+import 'package:nexteons_study_project/model/dip_rate_data_model/list.dart';
 
 class DpiRateList {
-  List<ListElement>? list;
+  List<DipListElement>? list;
   int? totalCount;
 
   DpiRateList({
@@ -12,8 +12,8 @@ class DpiRateList {
   factory DpiRateList.fromJson(Map<String, dynamic> json) => DpiRateList(
         list: json["list"] == null
             ? []
-            : List<ListElement>.from(
-                json["list"]!.map((x) => ListElement.fromJson(x))),
+            : List<DipListElement>.from(
+                json["list"]!.map((x) => DipListElement.fromJson(x))),
         totalCount: json["totalCount"],
       );
 

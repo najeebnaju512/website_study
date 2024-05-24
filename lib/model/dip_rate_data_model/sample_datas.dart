@@ -1,11 +1,11 @@
 import 'data.dart';
 
-class SampleDatas {
+class SampleDipRateModel {
   Data? data;
 
-  SampleDatas({this.data});
+  SampleDipRateModel({this.data});
 
-  factory SampleDatas.fromJson(Map<String, dynamic> json) => SampleDatas(
+  factory SampleDipRateModel.fromJson(Map<String, dynamic> json) => SampleDipRateModel(
         data: json['data'] == null
             ? null
             : Data.fromJson(json['data'] as Map<String, dynamic>),
