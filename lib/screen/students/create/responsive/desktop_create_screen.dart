@@ -134,7 +134,7 @@ class CreateStudentDesktopScreen extends StatelessWidget {
                           swidth: size.width * .12,
                           onpress: () {
                             controller.createStudent();
-                          }, 
+                          },
                         ),
                       ],
                     ),

@@ -27,7 +27,8 @@ class LoginDesktop extends StatelessWidget {
                   width: size.width * .45,
                   decoration: const BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("asset/image/loginbk.jpg"),fit: BoxFit.cover)),
+                          image: AssetImage("asset/image/loginbk.jpg"),
+                          fit: BoxFit.cover)),
                 ),
                 SizedBox(
                   height: size.width * .3,

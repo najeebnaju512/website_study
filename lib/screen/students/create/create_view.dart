@@ -58,9 +58,8 @@ class _StudentsCreateState extends State<StudentsCreate> {
 /// Expanded(child)
 /// ]),
 /// app:if(mobile)appbar:null
-/// 
+///
 /// }
-
 
 /*
  ResponsiveLayout(
@@ -69,4 +68,4 @@ class _StudentsCreateState extends State<StudentsCreate> {
         ),
         tabletBody: CreateStudentTabletScreen(controller: controller,),
         desktopBody: CreateStudentDesktopScreen(controller: controller,));
-*/ 
+*/

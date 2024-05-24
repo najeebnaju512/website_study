@@ -21,7 +21,7 @@ class MobileResultScreen extends StatelessWidget {
                 ? GestureDetector(
                     onTap: () {
                       GoRouter.of(navigatorKey.currentContext!)
-                        .goNamed(Routernames.addDatas);
+                          .goNamed(Routernames.addDatas);
                     },
                     child: Card(
                       elevation: 0,

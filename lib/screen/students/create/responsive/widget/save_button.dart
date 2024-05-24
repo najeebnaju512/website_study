@@ -11,7 +11,8 @@ class SaveButton extends StatelessWidget {
     required this.onpress,
     this.fontsize,
     this.minwidth,
-    this.shight, this.swidth,
+    this.shight,
+    this.swidth,
   });
   final String text;
   final Size size;

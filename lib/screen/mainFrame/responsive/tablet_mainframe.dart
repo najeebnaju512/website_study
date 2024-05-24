@@ -8,7 +8,8 @@ import '../main_frame_controller.dart';
 class TabletMainFrame extends StatelessWidget {
   final MainFrameController controller;
   const TabletMainFrame({
-    super.key, required this.controller,
+    super.key,
+    required this.controller,
   });
 
   @override
@@ -27,7 +28,9 @@ class TabletMainFrame extends StatelessWidget {
               child: Image.asset(
                 "asset/logo/logo.png",
               )),
-              const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           ListView.builder(
             shrinkWrap: true,
             itemCount: controller.buttonData.length,

@@ -20,7 +20,8 @@ class DataEntryField extends StatelessWidget {
     this.validator,
     this.keyboardType,
     this.inputFormatters,
-    this.maxlength, this.fontsize,
+    this.maxlength,
+    this.fontsize,
   });
 
   @override

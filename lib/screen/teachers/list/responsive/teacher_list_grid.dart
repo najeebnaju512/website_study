@@ -21,7 +21,7 @@ class TeacherDataGridState extends State<TeacherDataGrid> {
   @override
   void initState() {
     teacherlist = widget.controller.getTeacher(); // fetching data to UI
-    convertedTeacherData = ConvertedTeacherData(teacherlist);//used as widget
+    convertedTeacherData = ConvertedTeacherData(teacherlist); // used as widget
     super.initState();
   }
 
@@ -30,9 +30,8 @@ class TeacherDataGridState extends State<TeacherDataGrid> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 10),
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
           child: SfDataGrid(
-            allowSorting: true,
             allowPullToRefresh: true,
             source: convertedTeacherData,
             columns: [
@@ -41,7 +40,7 @@ class TeacherDataGridState extends State<TeacherDataGrid> {
                 label: Container(
                   color: ColorTheme.lightBlue.withOpacity(.5),
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.centerRight,
+                  alignment: Alignment.center,
                   child: const Text(
                     'ID',
                     overflow: TextOverflow.ellipsis,
@@ -53,7 +52,7 @@ class TeacherDataGridState extends State<TeacherDataGrid> {
                 label: Container(
                   color: ColorTheme.lightBlue.withOpacity(.5),
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: const Text(
                     'Name',
                     overflow: TextOverflow.ellipsis,
@@ -65,7 +64,7 @@ class TeacherDataGridState extends State<TeacherDataGrid> {
                 label: Container(
                   color: ColorTheme.lightBlue.withOpacity(.5),
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: const Text(
                     'Subject',
                     overflow: TextOverflow.ellipsis,
@@ -77,7 +76,7 @@ class TeacherDataGridState extends State<TeacherDataGrid> {
                 label: Container(
                   color: ColorTheme.lightBlue.withOpacity(.5),
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.centerRight,
+                  alignment: Alignment.center,
                   child: const Text(
                     'Salary',
                     overflow: TextOverflow.ellipsis,

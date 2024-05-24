@@ -16,8 +16,8 @@ class LoginMobile extends StatelessWidget {
       body: Form(
         key: controller.loginValidatkey,
         child: Padding(
-          padding: const EdgeInsets.only(
-              left: 20.0, right: 20, top: 70, bottom: 20),
+          padding:
+              const EdgeInsets.only(left: 20.0, right: 20, top: 70, bottom: 20),
           child: SizedBox(
             height: MediaQuery.of(context).size.height,
             child: SingleChildScrollView(
@@ -31,7 +31,8 @@ class LoginMobile extends StatelessWidget {
                       width: 350,
                       decoration: const BoxDecoration(
                           image: DecorationImage(
-                              image: AssetImage("asset/image/loginbk.jpg"),fit: BoxFit.cover)),
+                              image: AssetImage("asset/image/loginbk.jpg"),
+                              fit: BoxFit.cover)),
                     ),
                   ),
                   RichText(
@@ -46,7 +47,7 @@ class LoginMobile extends StatelessWidget {
                                   size: 16, weight: FontWeight.w400))
                         ]),
                   ),
-                   const SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   LoginEntryField(
@@ -54,7 +55,7 @@ class LoginMobile extends StatelessWidget {
                     fontsize: 14,
                     controller: controller.nameormailControl,
                   ),
-                   const SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   LoginEntryField(
@@ -82,7 +83,7 @@ class LoginMobile extends StatelessWidget {
                   //     ),
                   //   ],
                   // ),
-                   const SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   MaterialButton(

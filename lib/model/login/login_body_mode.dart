@@ -31,26 +31,6 @@ class LoginBody {
   Map<String, dynamic> get loginbody => _loginbody;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // class LoginBody {
 //   LoginBody(this._nameORmail, this._password) {
 //     Map<String, dynamic> loginbody = {
@@ -79,5 +59,5 @@ class LoginBody {
 
 //   final String _nameORmail;
 //   final String _password;
- 
+
 // }

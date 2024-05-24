@@ -21,7 +21,7 @@ class CreateStudentTabletScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(left: 120, top: 63),
             child: SizedBox(
-              height: size.width*.75,
+              height: size.width * .75,
               width: size.width * .5,
               child: SingleChildScrollView(
                 child: Column(

@@ -49,7 +49,7 @@ class DesktopResultScreen extends StatelessWidget {
                             ? GestureDetector(
                                 onTap: () {
                                   GoRouter.of(navigatorKey.currentContext!)
-                                    .goNamed(Routernames.addDatas);
+                                      .goNamed(Routernames.addDatas);
                                 },
                                 child: Card(
                                   elevation: 0,
@@ -58,16 +58,15 @@ class DesktopResultScreen extends StatelessWidget {
                                       side: const BorderSide(width: 1)),
                                   color: ColorTheme.grey,
                                   child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
                                       Icon(
                                         Icons.add_circle_outline,
                                         size: size.width * .07,
-                                        color: ColorTheme.darkgrey
-                                            .withOpacity(.6),
+                                        color:
+                                            ColorTheme.darkgrey.withOpacity(.6),
                                       ),
                                       Text(
                                         "Add New Student",
