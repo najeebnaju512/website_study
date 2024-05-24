@@ -53,5 +53,3 @@ class LoginController extends GetxController {
     sharedPreferences.setString(StorageKeys.accessToken, token);
   }
 }
-//developer.fayizalinp@gmail.com
-//0RneWfb0

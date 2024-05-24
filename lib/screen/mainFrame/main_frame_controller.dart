@@ -7,5 +7,6 @@ class MainFrameController extends GetxController {
   RxList<FrameButtonData> buttonData = [
   FrameButtonData("Show Students", Routernames.showDatas),
   FrameButtonData("Add Students", Routernames.addDatas),
+  FrameButtonData("teacher", Routernames.techerData),
 ].obs;
 }
