@@ -39,20 +39,20 @@ class TeacherDataGridState extends State<TeacherDataGrid> {
             columns: [
               GridColumn(
                 columnName: 'id',
-                label: const HeaderContainer(text: 'ID',fontsize: 16,),
+                label: const HeaderContainer(
+                  text: 'ID',
+                  fontsize: 16,
+                ),
               ),
               GridColumn(
-                columnName: 'name',
-                label: const HeaderContainer(text: "Name", fontsize: 16)
-              ),
+                  columnName: 'name',
+                  label: const HeaderContainer(text: "Name", fontsize: 16)),
               GridColumn(
-                columnName: 'subject',
-                label: const HeaderContainer(text: "Subject", fontsize: 16)
-              ),
+                  columnName: 'subject',
+                  label: const HeaderContainer(text: "Subject", fontsize: 16)),
               GridColumn(
-                columnName: 'salary',
-                label: const HeaderContainer(text: "Salary", fontsize: 16)
-              ),
+                  columnName: 'salary',
+                  label: const HeaderContainer(text: "Salary", fontsize: 16)),
             ],
           ),
         ),
