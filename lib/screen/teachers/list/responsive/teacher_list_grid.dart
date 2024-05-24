@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:nexteons_study_project/utils/color_theme.dart';
 import 'package:syncfusion_flutter_datagrid/datagrid.dart';
 
 import '../../../../model/teacher_list/teacher_model.dart';
 import '../teacher_list_controller.dart';
 import 'widget/converted_teacher_data.dart';
+import 'widget/header_text.dart';
 
 class TeacherDataGrid extends StatefulWidget {
   final TeacherListController controller;
@@ -32,56 +32,26 @@ class TeacherDataGridState extends State<TeacherDataGrid> {
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
           child: SfDataGrid(
+            gridLinesVisibility: GridLinesVisibility.both,
+            headerGridLinesVisibility: GridLinesVisibility.both,
             allowPullToRefresh: true,
             source: convertedTeacherData,
             columns: [
               GridColumn(
                 columnName: 'id',
-                label: Container(
-                  color: ColorTheme.lightBlue.withOpacity(.5),
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.center,
-                  child: const Text(
-                    'ID',
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
+                label: const HeaderContainer(text: 'ID',fontsize: 16,),
               ),
               GridColumn(
                 columnName: 'name',
-                label: Container(
-                  color: ColorTheme.lightBlue.withOpacity(.5),
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.center,
-                  child: const Text(
-                    'Name',
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
+                label: const HeaderContainer(text: "Name", fontsize: 16)
               ),
               GridColumn(
                 columnName: 'subject',
-                label: Container(
-                  color: ColorTheme.lightBlue.withOpacity(.5),
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.center,
-                  child: const Text(
-                    'Subject',
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
+                label: const HeaderContainer(text: "Subject", fontsize: 16)
               ),
               GridColumn(
                 columnName: 'salary',
-                label: Container(
-                  color: ColorTheme.lightBlue.withOpacity(.5),
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.center,
-                  child: const Text(
-                    'Salary',
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
+                label: const HeaderContainer(text: "Salary", fontsize: 16)
               ),
             ],
           ),
