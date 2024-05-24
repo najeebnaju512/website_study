@@ -5,8 +5,8 @@ import '../../utils/router_names.dart';
 
 class MainFrameController extends GetxController {
   RxList<FrameButtonData> buttonData = [
-  FrameButtonData("Show Students", Routernames.showDatas),
-  FrameButtonData("Add Students", Routernames.addDatas),
-  FrameButtonData("teacher", Routernames.techerData),
+  FrameButtonData("Students Data", Routernames.showDatas),
+  FrameButtonData("Add Student", Routernames.addDatas),
+  FrameButtonData("Teachers List", Routernames.techerData),
 ].obs;
 }
