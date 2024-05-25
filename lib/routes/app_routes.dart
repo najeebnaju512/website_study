@@ -24,7 +24,7 @@ final router = GoRouter(
       return "/login";
     } else {
       if (state.fullPath == "/login") {
-        return "base";
+        return "/showdetails";
       } else {
         return null;
       }
