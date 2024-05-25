@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_rx/get_rx.dart';
 import 'package:nexteons_study_project/model/dip_rate_data_model/list.dart';
 import 'package:nexteons_study_project/model/dip_rate_data_model/sample_datas.dart';
 import 'package:nexteons_study_project/repository/diprate/get_dip_rate_api.dart';
@@ -14,8 +15,10 @@ import '../../../utils/constant/storage_keys.dart';
 class DipRateListController extends GetxController {
   late SharedPreferences sharedPreferences;
   var dpilist = <DipListElement>[].obs;
+  RxBool isLoading =false.obs;
 
   Future<void> getData() async {
+    isLoading = true.obs;
     Map<String, String> headers = await getApiheader();
     if (headers.isEmpty) {
       var message = "Failed to get API headers";
@@ -55,6 +58,7 @@ class DipRateListController extends GetxController {
 
         // Updating dpilist with new datas fetched
         dpilist.value = sampleDipRateModel.data?.dpiRateList?.list ?? [];
+        isLoading = false.obs;
 
         AppSnackbar.oneTimeSnackBar("Success",
             context: navigatorKey.currentContext!, bgColor: Colors.green);
