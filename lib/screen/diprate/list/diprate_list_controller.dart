@@ -209,8 +209,6 @@ mutation DPI_Rate_StatusChange(\$statusChange: StatusChangeInput!) {
       var responsebody =
           await GetDipRate.fetchData(header: headers, data: payload);
       if (responsebody["data"] != null) {
-        AppSnackbar.oneTimeSnackBar("Deleted Successfully",
-            context: navigatorKey.currentContext!, bgColor: Colors.green);
         await getData();
       } else {
         AppSnackbar.oneTimeSnackBar("Failed to Fetch Data",
