@@ -5,6 +5,6 @@ class Routernames {
   static String showDatas = "showData";
   //route for page of login
   static String login = "loginpage";
-  //route for page of login
+  //route for page of dpi
   static String dpilist = "dpilisdata";
 }
