@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:nexteons_study_project/screen/diprate/list/responsive/widget/dpi_alert_entry.dart';
 import 'package:nexteons_study_project/utils/color_theme.dart';
@@ -41,8 +40,7 @@ class ConvertedGridData extends DataGridSource {
           columnName: 'delete',
           value: IconButton(
             onPressed: () {
-              log("delete");
-              // Call delete function from controller here if required
+              controller.delete(id: listitems.id);
             },
             icon: const Icon(
               Icons.delete,

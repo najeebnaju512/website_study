@@ -48,9 +48,6 @@ class DpiDataGrid extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                   child: SfDataGrid(
-                    columnResizeMode: ColumnResizeMode.onResize,
-                    allowColumnsResizing: true,
-                    allowColumnsDragging: true,
                     gridLinesVisibility: GridLinesVisibility.both,
                     headerGridLinesVisibility: GridLinesVisibility.both,
                     allowPullToRefresh: true,

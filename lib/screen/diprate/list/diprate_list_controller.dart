@@ -117,7 +117,7 @@ mutation DPI_Rate_Create(\$createDpiRateInput: CreateDpiRateInput!) {
       if (responsebody["data"] != null) {
         AppSnackbar.oneTimeSnackBar("Success",
             context: navigatorKey.currentContext!, bgColor: Colors.green);
-        getData();
+        await getData();
       } else {
         AppSnackbar.oneTimeSnackBar("Failed to Fetch Data",
             context: navigatorKey.currentContext!, bgColor: Colors.red);
@@ -163,7 +163,7 @@ mutation DPI_Rate_Update(\$updateDpiRateInput: UpdateDpiRateInput!) {
       if (responsebody["data"] != null) {
         AppSnackbar.oneTimeSnackBar("Success",
             context: navigatorKey.currentContext!, bgColor: Colors.green);
-        getData();
+        await getData();
         nameControl.clear();
         rateControl.clear();
       } else {
@@ -173,6 +173,50 @@ mutation DPI_Rate_Update(\$updateDpiRateInput: UpdateDpiRateInput!) {
       nameControl.clear();
       rateControl.clear();
       Navigator.of(navigatorKey.currentContext!).pop();
+    } catch (e) {
+      log("An error occurred: $e");
+    }
+  }
+
+  void delete({String? id}) async {
+    isLoading = true.obs;
+    Map<String, String> headers = await getApiheader();
+    if (headers.isEmpty) {
+      var message = "Failed to get API headers";
+      log(message);
+      return;
+    }
+
+    Map<String, dynamic> payload = {
+      'query': '''
+mutation DPI_Rate_StatusChange(\$statusChange: StatusChangeInput!) {
+  DPI_Rate_StatusChange(statusChange: \$statusChange) {
+    message
+}
+}
+''',
+      'variables': {
+        "statusChange": {
+          "_editCount": -1,
+          "_logDescription": null,
+          "_status": "DELETE",
+          "ids": id
+        }
+      }
+    };
+
+    try {
+      var responsebody =
+          await GetDipRate.fetchData(header: headers, data: payload);
+      if (responsebody["data"] != null) {
+        AppSnackbar.oneTimeSnackBar("Deleted Successfully",
+            context: navigatorKey.currentContext!, bgColor: Colors.green);
+        await getData();
+      } else {
+        AppSnackbar.oneTimeSnackBar("Failed to Fetch Data",
+            context: navigatorKey.currentContext!, bgColor: Colors.red);
+      }
+      isLoading = false.obs;
     } catch (e) {
       log("An error occurred: $e");
     }
