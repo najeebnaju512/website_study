@@ -48,8 +48,8 @@ final router = GoRouter(
       builder: (context, state) => const LoginView(),
     ),
     GoRoute(
-      name: Routernames.techerData,
-      path: '/teachers',
+      name: Routernames.dpilist,
+      path: '/dpilist',
       builder: (context, state) => const DipRateListView(),
     ),
   ],
