@@ -84,7 +84,7 @@ class DipRateListController extends GetxController {
       return {};
     }
   }
-
+//adding data to dpi api
   void addData() async {
     Map<String, String> headers = await getApiheader();
     if (headers.isEmpty) {
