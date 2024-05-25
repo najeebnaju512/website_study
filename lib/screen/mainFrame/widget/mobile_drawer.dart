@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:nexteons_study_project/screen/mainFrame/main_frame_controller.dart';
 
 import '../../../utils/color_theme.dart';
-import 'frame_button.dart';
+import '../../widget/app_button.dart';
 
 class DrawerRefactored extends StatelessWidget {
   final MainFrameController controller;
@@ -35,7 +35,7 @@ class DrawerRefactored extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5),
-                  child: FrameButton(
+                  child: AppButton(
                       fontsize: 12,
                       onpress: () {
                         context.goNamed(controller.buttonData[index].route);

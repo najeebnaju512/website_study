@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nexteons_study_project/utils/responsive_layout.dart';
+import 'package:nexteons_study_project/screen/widget/responsive_layout.dart';
 import 'package:nexteons_study_project/screen/students/create/controller.dart';
 import 'package:nexteons_study_project/screen/students/create/responsive/desktop_create_screen.dart';
 import 'package:nexteons_study_project/screen/students/create/responsive/mobile_create_screen.dart';

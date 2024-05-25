@@ -5,7 +5,7 @@ import 'package:nexteons_study_project/screen/students/login/responsive/desktop_
 import 'package:nexteons_study_project/screen/students/login/responsive/mobile_login.dart';
 import 'package:nexteons_study_project/screen/students/login/responsive/tablet_login.dart';
 
-import '../../../utils/responsive_layout.dart';
+import '../../widget/responsive_layout.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../utils/color_theme.dart';
 import '../main_frame_controller.dart';
-import '../widget/frame_button.dart';
+import '../../widget/app_button.dart';
 
 class DesktopMainFrame extends StatelessWidget {
   final MainFrameController controller;
@@ -34,7 +34,7 @@ class DesktopMainFrame extends StatelessWidget {
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
-                child: FrameButton(
+                child: AppButton(
                     fontsize: 20,
                     onpress: () {
                       context.goNamed(controller.buttonData[index].route);

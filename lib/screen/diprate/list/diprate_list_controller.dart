@@ -6,7 +6,7 @@ import 'package:get/get_rx/get_rx.dart';
 import 'package:nexteons_study_project/model/dip_rate_data_model/list.dart';
 import 'package:nexteons_study_project/model/dip_rate_data_model/sample_datas.dart';
 import 'package:nexteons_study_project/repository/diprate/get_dip_rate_api.dart';
-import 'package:nexteons_study_project/utils/app_snackbar.dart';
+import 'package:nexteons_study_project/screen/widget/app_snackbar.dart';
 import 'package:nexteons_study_project/utils/constant/app_const.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

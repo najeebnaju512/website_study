@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/color_theme.dart';
-import '../../../utils/text_styles.dart';
+import '../../utils/color_theme.dart';
+import '../../utils/text_styles.dart';
 
-class FrameButton extends StatelessWidget {
-  const FrameButton({
+class AppButton extends StatelessWidget {
+  const AppButton({
     super.key,
     required this.fontsize,
     required this.onpress,

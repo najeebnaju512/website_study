@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nexteons_study_project/utils/text_styles.dart';
 
-import 'color_theme.dart';
+import '../../utils/color_theme.dart';
 
 class AppSnackbar {
   static oneTimeSnackBar(

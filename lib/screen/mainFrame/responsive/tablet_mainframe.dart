@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:nexteons_study_project/screen/mainFrame/widget/frame_button.dart';
+import 'package:nexteons_study_project/screen/widget/app_button.dart';
 
 import '../../../utils/color_theme.dart';
 import '../main_frame_controller.dart';
@@ -37,7 +37,7 @@ class TabletMainFrame extends StatelessWidget {
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 5),
-                child: FrameButton(
+                child: AppButton(
                     fontsize: 14,
                     onpress: () {
                       context.goNamed(controller.buttonData[index].route);

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nexteons_study_project/model/login/login_body_model.dart';
 import 'package:nexteons_study_project/repository/login/login_api.dart';
-import 'package:nexteons_study_project/utils/app_snackbar.dart';
+import 'package:nexteons_study_project/screen/widget/app_snackbar.dart';
 import 'package:nexteons_study_project/utils/constant/storage_keys.dart';
 import 'package:nexteons_study_project/utils/router_names.dart';
 import 'package:shared_preferences/shared_preferences.dart';
