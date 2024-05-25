@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../../../utils/color_theme.dart';
-import '../../../../../utils/text_styles.dart';
+import '../../utils/color_theme.dart';
+import '../../utils/text_styles.dart';
 
 class DataEntryField extends StatelessWidget {
   final String title;

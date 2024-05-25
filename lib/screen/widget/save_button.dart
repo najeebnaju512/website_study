@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../utils/color_theme.dart';
-import '../../../../../utils/text_styles.dart';
+import '../../utils/color_theme.dart';
+import '../../utils/text_styles.dart';
 
 class SaveButton extends StatelessWidget {
   const SaveButton({
     super.key,
     required this.text,
-    required this.size,
     required this.onpress,
     this.fontsize,
     this.minwidth,
@@ -15,7 +14,6 @@ class SaveButton extends StatelessWidget {
     this.swidth,
   });
   final String text;
-  final Size size;
   final VoidCallback onpress;
   final double? fontsize;
   final double? minwidth;

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../../utils/text_styles.dart';
-import 'widget/data_entry_feild.dart';
-import 'widget/save_button.dart';
+import '../../../widget/data_entry_feild.dart';
+import '../../../widget/save_button.dart';
 import '../controller.dart';
 
 class CreateStudentMobileScreen extends StatelessWidget {
@@ -97,7 +97,6 @@ class CreateStudentMobileScreen extends StatelessWidget {
                 Center(
                   child: SaveButton(
                     text: "Save",
-                    size: size,
                     fontsize: 10,
                     shight: 40,
                     swidth: size.width * .3,

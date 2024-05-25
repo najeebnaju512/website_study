@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../../utils/text_styles.dart';
-import 'widget/data_entry_feild.dart';
-import 'widget/save_button.dart';
+import '../../../widget/data_entry_feild.dart';
+import '../../../widget/save_button.dart';
 import '../controller.dart';
 
 class CreateStudentTabletScreen extends StatelessWidget {
@@ -131,7 +131,6 @@ class CreateStudentTabletScreen extends StatelessWidget {
                                   )),
                               SaveButton(
                                 text: "Save & Proceed",
-                                size: size,
                                 fontsize: 14,
                                 minwidth: size.width * .12,
                                 shight: size.width * .045,

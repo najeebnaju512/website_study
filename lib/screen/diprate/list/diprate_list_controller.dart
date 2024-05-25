@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_rx/get_rx.dart';
 import 'package:nexteons_study_project/model/dip_rate_data_model/list.dart';
 import 'package:nexteons_study_project/model/dip_rate_data_model/sample_datas.dart';
 import 'package:nexteons_study_project/repository/diprate/get_dip_rate_api.dart';
@@ -14,8 +13,12 @@ import '../../../utils/constant/storage_keys.dart';
 
 class DipRateListController extends GetxController {
   late SharedPreferences sharedPreferences;
+
+  var nameControl = TextEditingController();
+  var rateControl = TextEditingController();
+
   var dpilist = <DipListElement>[].obs;
-  RxBool isLoading =false.obs;
+  RxBool isLoading = false.obs;
 
   Future<void> getData() async {
     isLoading = true.obs;
@@ -79,6 +82,50 @@ class DipRateListController extends GetxController {
     } else {
       log("accesstoken is null");
       return {};
+    }
+  }
+
+  void addData() async {
+    Map<String, String> headers = await getApiheader();
+    if (headers.isEmpty) {
+      var message = "Failed to get API headers";
+      log(message);
+      return;
+    }
+
+    Map<String, dynamic> payload = {
+      'query': '''
+mutation DPI_Rate_Create(\$createDpiRateInput: CreateDpiRateInput!) {
+  DPI_Rate_Create(createDpiRateInput: \$createDpiRateInput) {
+    _id
+  }
+}
+''',
+      'variables': {
+        "createDpiRateInput": {
+          "_branchId": '6631da5ce9efa0bd84a86852',
+          "_name": nameControl.text,
+          "_rate": int.parse(rateControl.text)
+        }
+      },
+    };
+
+    try {
+      var responsebody =
+          await GetDipRate.fetchData(header: headers, data: payload);
+      if (responsebody["data"] != null) {
+        AppSnackbar.oneTimeSnackBar("Success",
+            context: navigatorKey.currentContext!, bgColor: Colors.green);
+        getData();
+        nameControl.clear();
+        rateControl.clear();
+        Navigator.of(navigatorKey.currentContext!).pop();
+      } else {
+        AppSnackbar.oneTimeSnackBar("Failed to Fetch Data",
+            context: navigatorKey.currentContext!, bgColor: Colors.red);
+      }
+    } catch (e) {
+      log("An error occurred: $e");
     }
   }
 }
