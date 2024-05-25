@@ -9,8 +9,8 @@ import 'responsive/mobile_mainframe.dart';
 import 'responsive/tablet_mainframe.dart';
 
 class FrameAdjuster extends StatefulWidget {
-  const FrameAdjuster({super.key, required this.child});
-  final Widget child;
+  const FrameAdjuster({super.key, this.child});
+  final Widget? child;
 
   @override
   State<FrameAdjuster> createState() => _FrameAdjusterState();
@@ -57,7 +57,7 @@ class _FrameAdjusterState extends State<FrameAdjuster> {
                   DesktopMainFrame(
                     controller: controller,
                   ),
-                Expanded(child: widget.child)
+                Expanded(child: widget.child!)
               ],
             ));
       },

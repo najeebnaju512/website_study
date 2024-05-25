@@ -6,7 +6,6 @@ import 'package:nexteons_study_project/screen/students/create/responsive/desktop
 import 'package:nexteons_study_project/screen/students/create/responsive/mobile_create_screen.dart';
 import 'package:nexteons_study_project/screen/students/create/responsive/tablet_create_screen.dart';
 
-import '../../mainFrame/main_frame_view_adjuster.dart';
 
 class StudentsCreate extends StatefulWidget {
   const StudentsCreate({super.key});
@@ -32,12 +31,10 @@ class _StudentsCreateState extends State<StudentsCreate> {
 
   @override
   Widget build(BuildContext context) {
-    return FrameAdjuster(
-      child: ResponsiveLayout(
-          mobileBody: CreateStudentMobileScreen(controller: controller),
-          tabletBody: CreateStudentTabletScreen(controller: controller),
-          desktopBody: CreateStudentDesktopScreen(controller: controller)),
-    );
+    return ResponsiveLayout(
+        mobileBody: CreateStudentMobileScreen(controller: controller),
+        tabletBody: CreateStudentTabletScreen(controller: controller),
+        desktopBody: CreateStudentDesktopScreen(controller: controller));
   }
 }
 //st->child

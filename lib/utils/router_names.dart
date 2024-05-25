@@ -7,4 +7,6 @@ class Routernames {
   static String login = "loginpage";
   //route for page of dpi
   static String dpilist = "dpilisdata";
+   //route for page of dpi
+  static String mainFrame = "mainframe";
 }

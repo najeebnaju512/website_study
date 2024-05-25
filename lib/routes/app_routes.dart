@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:nexteons_study_project/screen/mainFrame/main_frame_view_adjuster.dart';
 import 'package:nexteons_study_project/screen/students/login/login_view.dart';
 import 'package:nexteons_study_project/utils/constant/app_const.dart';
 import 'package:nexteons_study_project/utils/constant/storage_keys.dart';
@@ -23,7 +24,7 @@ final router = GoRouter(
       return "/login";
     } else {
       if (state.fullPath == "/login") {
-        return "/showdetails";
+        return "base";
       } else {
         return null;
       }
@@ -32,25 +33,34 @@ final router = GoRouter(
   },
   initialLocation: '/login',
   routes: [
-    GoRoute(
-      name: Routernames.addDatas,
-      path: '/adddetails',
-      builder: (context, state) => const StudentsCreate(),
-    ),
-    GoRoute(
-      name: Routernames.showDatas,
-      path: '/showdetails',
-      builder: (context, state) => const StudentResultList(),
-    ),
+    ShellRoute(
+        builder: (context, state, child) {
+          return FrameAdjuster(
+            child: child,
+          );
+        },
+        routes: [
+          GoRoute(
+              name: Routernames.showDatas,
+              path: '/showdetails',
+              builder: (context, state) => const StudentResultList(),
+              routes: [
+                GoRoute(
+                  name: Routernames.addDatas,
+                  path: 'adddetails',
+                  builder: (context, state) => const StudentsCreate(),
+                ),
+              ]),
+          GoRoute(
+            name: Routernames.dpilist,
+            path: '/dpilist',
+            builder: (context, state) => const DipRateListView(),
+          ),
+        ]),
     GoRoute(
       name: Routernames.login,
       path: '/login',
       builder: (context, state) => const LoginView(),
-    ),
-    GoRoute(
-      name: Routernames.dpilist,
-      path: '/dpilist',
-      builder: (context, state) => const DipRateListView(),
     ),
   ],
 );

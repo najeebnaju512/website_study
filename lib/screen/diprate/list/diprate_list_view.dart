@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../widget/responsive_layout.dart';
-import '../../mainFrame/main_frame_view_adjuster.dart';
 import 'responsive/diprate_grid.dart';
 import 'diprate_list_controller.dart';
 
@@ -33,11 +32,9 @@ class _DipRateListViewState extends State<DipRateListView> {
 
   @override
   Widget build(BuildContext context) {
-    return FrameAdjuster(
-      child: ResponsiveLayout(
-          mobileBody: DpiDataGrid(controller: controller),
-          tabletBody: DpiDataGrid(controller: controller),
-          desktopBody: DpiDataGrid(controller: controller)),
-    );
+    return ResponsiveLayout(
+        mobileBody: DpiDataGrid(controller: controller),
+        tabletBody: DpiDataGrid(controller: controller),
+        desktopBody: DpiDataGrid(controller: controller));
   }
 }
