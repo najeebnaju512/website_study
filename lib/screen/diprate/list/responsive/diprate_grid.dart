@@ -41,7 +41,7 @@ class DpiDataGrid extends StatelessWidget {
         ),
         body: Obx(() {
           final convertedTeacherData =
-              ConvertedGridData(controller.dpilist); // used as widget
+              ConvertedGridData(controller); // used as widget
           return controller.isLoading == true
               ? LoadingPage()
               : Padding(
@@ -68,6 +68,14 @@ class DpiDataGrid extends StatelessWidget {
                           columnName: 'rate',
                           label: const HeaderContainer(
                               text: "Rate", fontsize: 16)),
+                      GridColumn(
+                          columnName: 'edit',
+                          label: const HeaderContainer(
+                              text: "Edit", fontsize: 16)),
+                      GridColumn(
+                          columnName: 'delete',
+                          label: const HeaderContainer(
+                              text: "Delete", fontsize: 16)),
                     ],
                   ),
                 );

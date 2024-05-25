@@ -84,6 +84,7 @@ class DipRateListController extends GetxController {
       return {};
     }
   }
+
 //adding data to dpi api
   void addData() async {
     Map<String, String> headers = await getApiheader();
@@ -117,13 +118,61 @@ mutation DPI_Rate_Create(\$createDpiRateInput: CreateDpiRateInput!) {
         AppSnackbar.oneTimeSnackBar("Success",
             context: navigatorKey.currentContext!, bgColor: Colors.green);
         getData();
-        nameControl.clear();
-        rateControl.clear();
-        Navigator.of(navigatorKey.currentContext!).pop();
       } else {
         AppSnackbar.oneTimeSnackBar("Failed to Fetch Data",
             context: navigatorKey.currentContext!, bgColor: Colors.red);
       }
+      nameControl.clear();
+      rateControl.clear();
+      Navigator.of(navigatorKey.currentContext!).pop();
+    } catch (e) {
+      log("An error occurred: $e");
+    }
+  }
+
+  editData({String? id}) async {
+    Map<String, String> headers = await getApiheader();
+    if (headers.isEmpty) {
+      var message = "Failed to get API headers";
+      log(message);
+      return;
+    }
+
+    Map<String, dynamic> payload = {
+      'query': '''
+mutation DPI_Rate_Update(\$updateDpiRateInput: UpdateDpiRateInput!) {
+  DPI_Rate_Update(updateDpiRateInput: \$updateDpiRateInput) {
+    _id
+  }
+}
+''',
+      'variables': {
+        "updateDpiRateInput": {
+          "_branchId": "6631da5ce9efa0bd84a86852",
+          "_editCount": -1,
+          "_id": id,
+          "_name": nameControl.text,
+          "_rate": int.tryParse(rateControl.text)
+        }
+      },
+    };
+
+    try {
+      var responsebody =
+          await GetDipRate.fetchData(header: headers, data: payload);
+      if (responsebody["data"] != null) {
+        AppSnackbar.oneTimeSnackBar("Success",
+            context: navigatorKey.currentContext!, bgColor: Colors.green);
+        getData();
+        nameControl.clear();
+        rateControl.clear();
+      } else {
+        AppSnackbar.oneTimeSnackBar("Failed to Fetch Data",
+            context: navigatorKey.currentContext!, bgColor: Colors.red);
+      }
+      nameControl.clear();
+      rateControl.clear();
+      Navigator.of(navigatorKey.currentContext!).pop();
     } catch (e) {
       log("An error occurred: $e");
     }

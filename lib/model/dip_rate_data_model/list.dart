@@ -1,6 +1,6 @@
 class DipListElement {
   String? name;
-  int? rate;
+  double? rate;
   String? id;
 
   DipListElement({

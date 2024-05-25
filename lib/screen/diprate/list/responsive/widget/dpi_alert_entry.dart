@@ -11,12 +11,24 @@ class DpiAlertBoxEntryFeild extends StatelessWidget {
   const DpiAlertBoxEntryFeild({
     super.key,
     required this.controller,
-    this.id, required this.onpressed,
+    this.id,
+    required this.onpressed,
+    this.name,
+    this.rate,
   });
   final String? id;
+  final String? name;
+  final String? rate;
   final VoidCallback onpressed;
   @override
   Widget build(BuildContext context) {
+    if (id != null) {
+      controller.nameControl = TextEditingController(text: name);
+      controller.rateControl = TextEditingController(text: rate);
+    }else{
+      controller.nameControl = TextEditingController();
+      controller.rateControl = TextEditingController();
+    }
     return AlertDialog(
       backgroundColor: Colors.white,
       contentPadding: const EdgeInsets.all(10),
@@ -40,7 +52,8 @@ class DpiAlertBoxEntryFeild extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          DataEntryField(title: "Rate", fontsize: 14, controller: controller.rateControl)
+          DataEntryField(
+              title: "Rate", fontsize: 14, controller: controller.rateControl)
         ],
       ),
       actions: [
@@ -52,6 +65,8 @@ class DpiAlertBoxEntryFeild extends StatelessWidget {
             text: "Cancel",
             fontsize: 12,
             onpress: () {
+              controller.nameControl.clear();
+              controller.rateControl.clear();
               Navigator.of(context).pop();
             })
       ],
