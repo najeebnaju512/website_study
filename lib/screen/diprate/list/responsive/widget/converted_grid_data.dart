@@ -14,7 +14,7 @@ class ConvertedGridData extends DataGridSource {
       return DataGridRow(cells: [
         DataGridCell<String>(columnName: 'id', value: listitems.id),
         DataGridCell<String>(columnName: 'name', value: listitems.name),
-        DataGridCell<double>(columnName: 'subject', value: listitems.rate),
+        DataGridCell<double>(columnName: 'rate', value: listitems.rate),
         DataGridCell<Widget>(
           columnName: 'edit',
           value: IconButton(
